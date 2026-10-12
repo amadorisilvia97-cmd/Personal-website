@@ -557,13 +557,50 @@ body[data-current="start"] .hero{flex-direction:column;gap:2rem;padding-bottom:2
 @media(max-width:700px){.home-gallery .gallery-track .ph-w{width:calc(var(--gallery-viewport)*.8)}}
 
 
-/* Biography sits on the right of the portrait; its original type remains unchanged. */
+/* Full-width gallery, sized from its actual viewport on every resize. */
+.hero{--hero-gutter:1.5rem;padding-inline:var(--hero-gutter)}
+.home-gallery{width:calc(100% + 2 * var(--hero-gutter));max-width:none;min-width:0;flex-shrink:0}
+.home-gallery .gallery-track .ph-w{width:clamp(15rem,calc((var(--gallery-viewport,100vw) - 2.625rem)/4),28rem)}
+@media(max-width:1100px){.home-gallery .gallery-track .ph-w{width:calc((var(--gallery-viewport,100vw) - 1.75rem)/3)}}
+@media(max-width:700px){.home-gallery .gallery-track .ph-w{width:calc(var(--gallery-viewport,100vw)*.78)}}
+
+/* Keep the biography in the empty right side of the photograph. */
 .about-grid{position:relative;isolation:isolate;grid-template-columns:minmax(0,1fr)!important;gap:0!important}
-.about .portrait{grid-area:1/1;width:100%;height:100%;min-height:30rem;aspect-ratio:1600/1066!important;object-fit:cover;border:0;z-index:0}
-.about-grid::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,transparent 25%,rgba(0,0,0,.12) 45%,rgba(0,0,0,.62) 100%);pointer-events:none}
-.about-caption{grid-area:1/1;align-self:center;justify-self:end;width:45%;min-width:0;padding:2rem;position:relative;z-index:2}
-.about-caption #aboutBody{color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.3)}
-@media(max-width:720px){.about .portrait{min-height:42rem;object-position:65% center}.about-caption{width:62%;padding:1.5rem 1rem}.about-grid::after{background:linear-gradient(90deg,transparent 10%,rgba(0,0,0,.28) 40%,rgba(0,0,0,.7) 100%)}}
+.about .portrait{grid-area:1/1;width:100%;max-width:none;height:100%;min-height:34rem;aspect-ratio:1600/1066!important;object-fit:cover;object-position:center;border:0;z-index:0}
+.about-grid::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,transparent 62%,rgba(0,0,0,.3) 70%,rgba(0,0,0,.66) 100%);pointer-events:none}
+.about-caption{grid-area:1/1;align-self:center;justify-self:end;width:32%;min-width:0;padding:2rem 1.5rem 2rem .75rem;position:relative;z-index:2}
+.about-caption #aboutBody{color:#fff;font-family:var(--serif);font-weight:400;font-size:clamp(1.125rem,1.6vw,1.375rem);line-height:1.45;text-align:left;text-shadow:0 1px 3px rgba(0,0,0,.3)}
+@media(max-width:900px){
+  .about-grid{background:var(--burgundy)}
+  .about .portrait{grid-area:auto;height:auto;min-height:0;aspect-ratio:1600/1066!important;object-position:center}
+  .about-grid::after{display:none}
+  .about-caption{grid-area:auto;width:100%;padding:1.75rem 2rem;justify-self:stretch}
+  .about-caption #aboutBody{font-size:1.375rem;text-shadow:none}
+}
+
+/* Phone spacing, touch targets, and columns remain comfortable at 320px. */
+@media(max-width:600px){
+  .wrap{padding-inline:1.125rem}
+  .hero{--hero-gutter:1.125rem;padding-top:2.75rem}
+  .hero .in{gap:1.5rem}
+  .hero .txt{width:100%;min-width:0}
+  .hero p.lead{font-size:1rem}
+  .hero-actions .btn{max-width:100%;padding:1rem 1.125rem;letter-spacing:.1em;min-height:2.75rem}
+  section{padding-block:2.75rem}
+  .sub{margin-bottom:1.75rem}
+  .grid,.partner-grid{grid-template-columns:minmax(0,1fr)}
+  .split>*{min-width:0}
+  .about-caption{padding:1.5rem 1.25rem}
+  .about-caption #aboutBody{font-size:1.25rem;line-height:1.5}
+  .about-publications{margin-top:2rem;padding-top:1.5rem}
+  .price-row{gap:.875rem}
+  .price-num{padding-right:.875rem}
+  .price-ab{max-width:4.5rem}
+  .cb-in{padding-inline:1.125rem}
+  .cb-row a{overflow-wrap:anywhere}
+  .cb-rows{min-width:0;max-width:100%}
+  .back-to-top{right:calc(.75rem + env(safe-area-inset-right,0px));bottom:calc(.75rem + env(safe-area-inset-bottom,0px))}
+}
 
 </style>
 </head>
