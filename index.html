@@ -76,6 +76,8 @@
 .museum-credits .credit-info{max-width:42rem}
 .museum-credits .credit-info p{margin:.5rem 0}
 .museum-status{display:block;margin-top:.875rem;color:var(--muted);font-family:var(--sans);font-size:.75rem;line-height:1.5}
+.publication-citation{min-width:0;overflow-wrap:break-word;line-height:1.65}
+.publication-citation em{font-style:italic}
 </style>
 <style>
 
@@ -807,9 +809,10 @@ body[data-current="start"] .hero{flex-direction:column;gap:2rem;padding-bottom:2
     <div id="publikationen" class="about-publications">
     <p class="eyebrow" data-i18n="pubEy">Publikationen</p>
     <h3 class="publications-title"><span data-i18n="pubH">Schriften &amp; </span><em data-i18n="pubHem">Beiträge</em></h3>
-    <p class="sub" data-i18n="pubSub">Eine Auswahl an Texten und Aufsätzen. Die vollständige Liste folgt in Kürze.</p>
+    <p class="sub" data-i18n="pubSub">Eine Auswahl an Texten und Aufsätzen.</p>
     <div class="pub-grid" id="pubList">
-      <div class="pub"><div><strong data-i18n="pubPlaceholderTitle">Publikationsliste folgt</strong></div></div>
+      <div class="pub"><div class="publication-citation"><strong>AMADORI, Silvia / BIELFELDT, Ruth:</strong> „Hoch hinaus und heiß begehrt. Römische Kandelaber“, in: Ruth Bielfeldt et al. (Hrsg.), <em>Neues Licht aus Pompeji. Katalog zur Ausstellung</em>, München 2022, S. 64–73.</div></div>
+      <div class="pub"><div class="publication-citation"><strong>AMADORI, Silvia:</strong> „Lampenbäume. Vom griechischen Götterhain ins römische Haus“, in: Ruth Bielfeldt et al. (Hrsg.), <em>Neues Licht aus Pompeji. Katalog zur Ausstellung</em>, München 2022, S. 84–87.</div></div>
     </div>
     </div>
   </section>
@@ -863,7 +866,7 @@ var I18N = {
     vhsDesc:"Nächste Termine", ksDesc:"Führungen in der Antikensammlung und Glyptothek", otherOrg:"Weitere Kooperationen", otherDesc:"Aktuelle Termine und Veranstaltungen",
     seeDates:"Termine ansehen →", more:"Mehr erfahren →", comingSoon:"Programm folgt", viewProgram:"Programm ansehen →",
     gEy:"Gruppen & Events", gH:"Eine Führung ", gHem:"nach Maß", gSub:"Führungen und Workshops für Schulen, Universitäten, Unternehmen und private Gruppen – individuell konzipiert und auf Ihre Interessen abgestimmt.",
-    pubEy:"Publikationen", pubH:"Schriften & ", pubHem:"Beiträge", pubSub:"Eine Auswahl an Texten und Aufsätzen. Die vollständige Liste folgt in Kürze.",
+    pubEy:"Publikationen", pubH:"Schriften & ", pubHem:"Beiträge", pubSub:"Eine Auswahl an Texten und Aufsätzen.",
     pubPlaceholderTitle:"Publikationsliste folgt", pubPlaceholderText:"",
     galLabel:"Fotos aus den Führungen", galPrev:"Vorherige Fotos", galNext:"Nächste Fotos", galH:"Aus den ", galHem:"Führungen", phSlot:"Bild folgt",
     nEy:"Newsletter", nH:"In ", nHem:"Kontakt", nHrest:" bleiben", nSub:"Neue Führungen, offene Termine für alle und Wissenswertes aus den Museen. Wenige E-Mails, mit Sorgfalt geschrieben.",
@@ -886,7 +889,7 @@ var I18N = {
     vhsDesc:"Prossimi appuntamenti", ksDesc:"Visite nell'Antikensammlung e nella Glyptothek", otherOrg:"Altre collaborazioni", otherDesc:"Date ed eventi in corso",
     seeDates:"Vedi le date →", more:"Scopri di più →", comingSoon:"Programma in arrivo", viewProgram:"Vedi il programma →",
     gEy:"Gruppi ed eventi", gH:"Una visita ", gHem:"su misura", gSub:"Visite e workshop per scuole, università, aziende e gruppi privati – pensati su misura in base ai vostri interessi.",
-    pubEy:"Pubblicazioni", pubH:"Scritti e ", pubHem:"contributi", pubSub:"Una selezione di testi e saggi. L'elenco completo arriverà a breve.",
+    pubEy:"Pubblicazioni", pubH:"Scritti e ", pubHem:"contributi", pubSub:"Una selezione di testi e saggi.",
     pubPlaceholderTitle:"Elenco pubblicazioni in arrivo", pubPlaceholderText:"",
     galLabel:"Foto delle visite guidate", galPrev:"Foto precedenti", galNext:"Foto successive", galH:"Dalle ", galHem:"visite", phSlot:"Immagine in arrivo",
     nEy:"Newsletter", nH:"Resta in ", nHem:"contatto", nHrest:"", nSub:"Nuove visite, date aperte a tutti e qualche curiosità dai musei. Poche email, scritte con cura.",
@@ -909,7 +912,7 @@ var I18N = {
     vhsDesc:"Upcoming dates", ksDesc:"Tours of the Antikensammlung and Glyptothek", otherOrg:"Other collaborations", otherDesc:"Current dates and events",
     seeDates:"See dates →", more:"Learn more →", comingSoon:"Program coming soon", viewProgram:"View program →",
     gEy:"Groups & events", gH:"A tour ", gHem:"made for you", gSub:"Tours and workshops for schools, universities, companies and private groups – individually designed around your interests.",
-    pubEy:"Publications", pubH:"Writing & ", pubHem:"contributions", pubSub:"A selection of texts and essays. The full list is coming soon.",
+    pubEy:"Publications", pubH:"Writing & ", pubHem:"contributions", pubSub:"A selection of texts and essays.",
     pubPlaceholderTitle:"Publication list coming soon", pubPlaceholderText:"",
     galLabel:"Photos from the tours", galPrev:"Previous photos", galNext:"Next photos", galH:"From the ", galHem:"tours", phSlot:"Image coming soon",
     nEy:"Newsletter", nH:"Stay in ", nHem:"touch", nHrest:"", nSub:"New tours, open dates for everyone, and a few stories from the museums. Few emails, written with care.",
