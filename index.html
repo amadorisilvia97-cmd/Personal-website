@@ -619,7 +619,7 @@ body[data-current="start"] .hero{flex-direction:column;gap:2rem;padding-bottom:2
       <a href="#ueber-mich" data-i18n="nav5">Über mich</a>
       <a href="#privat" data-i18n="nav1">Museen</a>
       <a href="#touren" data-i18n="navTours">Themen</a>
-      <a href="#gutschein"><span data-i18n="gfHero">Kunst verschenken</span></a>
+      <a href="#projekte" data-i18n="navProjects">Projekte</a>
       <a href="#newsletter" data-i18n="nav4">Newsletter</a>
     </nav>
     <button type="button" class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mainNav"><span class="ham" aria-hidden="true"><i></i><i></i><i></i></span><span class="sr-only" data-i18n="menuBtn">Menü</span></button>
@@ -786,6 +786,10 @@ body[data-current="start"] .hero{flex-direction:column;gap:2rem;padding-bottom:2
     <h2 id="toursTitle" data-i18n="navTours">Themen</h2>
   </section>
 
+  <section id="projekte" class="projects-page" data-page="projekte" aria-labelledby="projectsTitle">
+    <h2 id="projectsTitle" data-i18n="navProjects">Projekte</h2>
+  </section>
+
   <section id="newsletter" class="news" data-page="newsletter">
     <p class="eyebrow" data-i18n="nEy">Newsletter</p>
     <h2 id="newsTitle">In <em>Kontakt</em> bleiben</h2>
@@ -853,6 +857,7 @@ document.getElementById("news").addEventListener("submit", function(e){
 // --- Sprachumschalter ---
 var I18N = {
   de: {
+    navProjects:"Projekte",
     neueStatus:"Wegen Sanierung geschlossen · Wiedereröffnung voraussichtlich 2030.",
     nav1:"Museen", navTours:"Themen", nav6:"Gutscheine", nav2:"Öffentliche Führungen", nav3:"Publikationen", nav4:"Newsletter", nav5:"Über mich", menuBtn:"Menü", toTop:"Nach oben", flipHint:"Ansehen", giftDiscover:"Gutschein-Pakete entdecken →", creditInfo:"Bildnachweis", gfCredit:"Bild: Peter Paul Rubens, „Rubens und Isabella Brant in der Geißblattlaube“ (Ausschnitt, eingefärbt), Bayerische Staatsgemäldesammlungen – Alte Pinakothek München, ", gfOcc:"Für Geburtstage, Jahrestage, Weihnachten oder einfach so.", gfHow:"So funktioniert’s", st1:"Paket wählen und anfragen", st2:"Gutschein zum Ausdrucken erhalten", st3:"Termin mit mir vereinbaren", pk1T:"Führung für zwei", pk1D:"Eine private Führung nur für zwei Personen, als Geschenk zu Geburtstag oder Jahrestag.", pk1P:"ab 100 €", pk2T:"Familienführung", pk2D:"Für Eltern oder Großeltern mit Kindern, auf alle Altersstufen abgestimmt.", pk2P:"ab 100 €", pk3T:"Museumsreihe", pk3D:"Zwei oder drei Führungen in verschiedenen Museen, z. B. von der Glyptothek über die Alte Pinakothek bis zur Pinakothek der Moderne.", pk3P:"Preis auf Anfrage", pk4T:"Führung mit Eintritt", pk4D:"Inklusive Eintrittskarten: ein Geschenk, bei dem wirklich alles dabei ist.", pk4P:"Preis auf Anfrage", pkReq:"Anfragen →", gfEy:"Geschenkidee", gfH:"Kunst ", gfHem:"verschenken", gfTxt:"Ein persönlicher Rundgang durch Münchens Museen, als Gutschein zum Ausdrucken.", gfBtn:"Gutschein anfragen", vT:"Gutschein", vName:"Private Führung", vMeta:"60 Minuten · bis 15 Personen", gfHero:"Kunst verschenken", city:"München", prAb:"60 Min.", prCur:"Euro", prTitle:"Honorar", prFrom:"ab", prMin:"Mindesthonorar für 60 Minuten auf Italienisch oder Deutsch, auch für Einzelpersonen. Auf Englisch ab 120 Euro. Gruppen bis maximal 15 Personen.", prNote:"Der Eintritt ins Museum ist nicht im Honorar enthalten.", prOffer:"Für Gruppen, Unternehmen, private Anlässe und individuell konzipierte Formate erstelle ich gerne ein persönliches Angebot.", prTax:"Alle Preise sind Endpreise. Gemäß § 19 UStG (Kleinunternehmerregelung) wird keine Umsatzsteuer berechnet.",
     heroEy:"Kunstführungen · München", heroH:"L'arte ", heroHem:"di guardare", heroHrest:".",
@@ -876,6 +881,7 @@ var I18N = {
     addr:"Kreittmayrstraße 16, München (80335)", portraitPh:"Foto folgt", role:"Kunsthistorikerin · Archäologin · Kunstvermittlerin"
   },
   it: {
+    navProjects:"Progetti",
     neueStatus:"Chiusa per ristrutturazione · Riapertura prevista nel 2030.",
     nav1:"Musei", navTours:"Temi", nav6:"Buoni regalo", nav2:"Visite pubbliche", nav3:"Pubblicazioni", nav4:"Newsletter", nav5:"Chi sono", menuBtn:"Menu", toTop:"Torna su", flipHint:"Guarda", giftDiscover:"Scopri i pacchetti regalo →", creditInfo:"Crediti immagine", gfCredit:"Immagine: Peter Paul Rubens, «Rubens e Isabella Brant nel pergolato di caprifoglio» (dettaglio, colorato), Bayerische Staatsgemäldesammlungen – Alte Pinakothek, Monaco, ", gfOcc:"Per compleanni, anniversari, Natale o semplicemente così.", gfHow:"Come funziona", st1:"Scegli il pacchetto e invia la richiesta", st2:"Ricevi il buono da stampare", st3:"Fissa la data con me", pk1T:"Visita per due", pk1D:"Una visita privata solo per due persone, come regalo per un compleanno o un anniversario.", pk1P:"da 100 €", pk2T:"Visita in famiglia", pk2D:"Per genitori o nonni con bambini, pensata per tutte le età.", pk2P:"da 100 €", pk3T:"Percorso tra i musei", pk3D:"Due o tre visite in musei diversi, ad esempio dalla Glyptothek all'Alte Pinakothek fino alla Pinakothek der Moderne.", pk3P:"Prezzo su richiesta", pk4T:"Visita con ingresso", pk4D:"Biglietti d'ingresso inclusi: un regalo davvero completo.", pk4P:"Prezzo su richiesta", pkReq:"Richiedi →", gfEy:"Idea regalo", gfH:"Regalare l'", gfHem:"arte", gfTxt:"Una visita personale nei musei di Monaco, come buono da stampare.", gfBtn:"Richiedi un buono", vT:"Buono regalo", vName:"Visita privata", vMeta:"60 minuti · fino a 15 persone", gfHero:"Regalare l'arte", city:"Monaco di Baviera", prAb:"60 min", prCur:"Euro", prTitle:"Onorario", prFrom:"da", prMin:"Onorario minimo per 60 minuti in italiano o tedesco, anche per una sola persona. In inglese da 120 euro. Gruppi fino a un massimo di 15 persone.", prNote:"L'ingresso al museo non è incluso nell'onorario.", prOffer:"Per gruppi, aziende, occasioni private e formati ideati su misura preparo volentieri un'offerta personalizzata.", prTax:"Tutti i prezzi sono prezzi finali. Ai sensi del § 19 UStG (regime dei piccoli imprenditori in Germania) non viene applicata l'IVA.",
     heroEy:"Visite guidate · Monaco", heroH:"L'arte ", heroHem:"di guardare", heroHrest:".",
@@ -899,6 +905,7 @@ var I18N = {
     addr:"Kreittmayrstraße 16, Monaco di Baviera (80335)", portraitPh:"Foto in arrivo", role:"Storica dell'arte · Archeologa · Mediatrice culturale"
   },
   en: {
+    navProjects:"Projects",
     neueStatus:"Closed for renovation · Expected to reopen in 2030.",
     nav1:"Museums", navTours:"Themes", nav6:"Gift vouchers", nav2:"Public tours", nav3:"Publications", nav4:"Newsletter", nav5:"About", menuBtn:"Menu", toTop:"Back to top", flipHint:"View", giftDiscover:"Explore gift voucher packages →", creditInfo:"Image credit", gfCredit:"Image: Peter Paul Rubens, “Rubens and Isabella Brant in the Honeysuckle Bower” (detail, tinted), Bayerische Staatsgemäldesammlungen – Alte Pinakothek Munich, ", gfOcc:"For birthdays, anniversaries, Christmas, or just because.", gfHow:"How it works", st1:"Choose a package and send a request", st2:"Receive a printable voucher", st3:"Arrange the date with me", pk1T:"Tour for two", pk1D:"A private tour for just two people, as a gift for a birthday or anniversary.", pk1P:"from €100", pk2T:"Family tour", pk2D:"For parents or grandparents with children, tailored to all ages.", pk2P:"from €100", pk3T:"Museum series", pk3D:"Two or three tours in different museums, e.g. from the Glyptothek via the Alte Pinakothek to the Pinakothek der Moderne.", pk3P:"Price on request", pk4T:"Tour with admission", pk4D:"Admission tickets included: a gift with everything in it.", pk4P:"Price on request", pkReq:"Request →", gfEy:"Gift idea", gfH:"Give the gift of ", gfHem:"art", gfTxt:"A personal tour through Munich's museums, as a printable gift voucher.", gfBtn:"Request a voucher", vT:"Gift voucher", vName:"Private tour", vMeta:"60 minutes · up to 15 people", gfHero:"Give the gift of art", city:"Munich", prAb:"60 min", prCur:"Euro", prTitle:"Fee", prFrom:"from", prMin:"Minimum fee for 60 minutes in Italian or German, also for individuals. In English from €120. Groups of up to 15 people.", prNote:"Museum admission is not included in the fee.", prOffer:"For groups, companies, private occasions and custom-designed formats, I am happy to prepare a personal quote.", prTax:"All prices are final prices. In accordance with § 19 UStG (German small business regulation), no VAT is charged.",
     heroEy:"Art Tours · Munich", heroH:"The Art ", heroHem:"of Looking", heroHrest:".",
@@ -946,7 +953,7 @@ document.querySelectorAll(".langsw button").forEach(function(b){
 });
 
 /* Seitennavigation */
-var PAGE_OF={touren:"touren",privat:"privat",oeffentlich:"privat",fuehrungen:"privat",bilder:"start",gruppen:"start",anfrage:"start",gutschein:"gutschein",termine:"privat",publikationen:"ueber-mich",newsletter:"newsletter","ueber-mich":"ueber-mich"};
+var PAGE_OF={projekte:"projekte",touren:"touren",privat:"privat",oeffentlich:"privat",fuehrungen:"privat",bilder:"start",gruppen:"start",anfrage:"start",gutschein:"gutschein",termine:"privat",publikationen:"ueber-mich",newsletter:"newsletter","ueber-mich":"ueber-mich"};
 function setHdr(){var h=document.querySelector("header");if(h)document.body.style.setProperty("--hdr",(h.parentNode.offsetHeight||80)+"px");}
 /* Startseite: Titel „L'arte di guardare“ wächst und wird scharf (Variante C) */
 var LAST_PAGE=null;
