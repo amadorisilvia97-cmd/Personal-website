@@ -106,6 +106,30 @@
 .form-privacy a{text-underline-offset:3px}
 .image-credits{padding-left:1.25rem;font-size:.875rem}
 .image-credits li{margin-bottom:.875rem}
+
+/* A quiet exhibition catalogue, with one shared collection feeding the enquiry form. */
+.tour-museum{padding:2.5rem 0 0;margin-top:2.5rem;border-top:1px solid var(--line)}
+.tour-museum h3{font-size:clamp(1.75rem,3vw,2.25rem);margin-bottom:1.5rem;overflow-wrap:break-word}
+.tour-items{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2rem}
+.tour-entry{min-width:0;display:flex;flex-direction:column}
+.tour-artwork{margin:0 0 1.25rem;aspect-ratio:4/3;overflow:hidden}
+.tour-artwork img{display:block;width:100%;height:100%;object-fit:contain}
+.tour-entry h4{font-family:var(--serif);font-weight:500;font-size:1.5rem;line-height:1.2;margin:0 0 .75rem}
+.tour-entry p{font-size:.9375rem;line-height:1.6;color:var(--muted);margin:0 0 1rem}
+.tour-enquiry{margin-top:auto;align-self:start;display:inline-flex;align-items:center;min-height:2.75rem;color:var(--accent);font-size:.8125rem;text-underline-offset:4px}
+.tour-enquiry:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.tour-location-note{max-width:65ch;color:var(--muted);font-size:.875rem;line-height:1.6;margin:0 0 1.5rem}
+.request-page-intro{display:none}
+body[data-current="anfrage"] .request-page-intro{display:block}
+body[data-current="anfrage"] #gruppen .split{display:block}
+body[data-current="anfrage"] #gruppen .split>div:first-child{display:none}
+body[data-current="anfrage"] #gruppen .g-right{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr);gap:3rem}
+#tourChoice{max-width:100%;text-overflow:ellipsis}
+#selectedTourNote{padding:.75rem;border-left:2px solid var(--line)}
+@media(max-width:1000px){.tour-items{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){body[data-current="anfrage"] #gruppen .g-right{grid-template-columns:minmax(0,1fr);gap:1.5rem}}
+@media(max-width:600px){.tour-items{grid-template-columns:minmax(0,1fr);gap:2rem}.tour-museum{margin-top:1.75rem;padding-top:1.75rem}.tour-artwork{aspect-ratio:3/2}.tour-entry h4{font-size:1.625rem}}
+
 </style>
 <style>
 
@@ -646,6 +670,8 @@ body[data-current="start"] .hero{flex-direction:column;gap:2rem;padding-bottom:2
     <nav id="mainNav">
       <a href="#ueber-mich" data-i18n="nav5">Über mich</a>
       <a href="#privat" data-i18n="nav1">Museen</a>
+      <a href="#touren" data-i18n="navTours">Themen</a>
+      <a href="#anfrage" data-i18n="navRequest">Anfragen</a>
       <a href="#projekte" data-i18n="navProjects">Projekte</a>
       <a href="#newsletter" data-i18n="nav4">Newsletter</a>
     </nav>
@@ -669,7 +695,7 @@ body[data-current="start"] .hero{flex-direction:column;gap:2rem;padding-bottom:2
       <p class="sub" id="heroSub" style="margin:10px auto 0;letter-spacing:.04em">Schauen. Verstehen. Entdecken.</p>
       <p class="lead" data-i18n="heroLead">Nicht nur Fakten. Sondern Geschichten, neue Perspektiven und die Kunst, genauer hinzuschauen.</p>
       <div class="btns hero-actions">
-        <a class="btn on-hero request-btn" href="#gruppen"><svg class="action-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="m3 6 9 7 9-7"/></svg><span data-i18n="b1">Führung anfragen</span></a>
+        <a class="btn on-hero request-btn" href="#anfrage"><svg class="action-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="m3 6 9 7 9-7"/></svg><span data-i18n="b1">Führung anfragen</span></a>
         <a class="btn on-hero ghost" href="#gutschein"><svg class="action-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="8" width="18" height="4"/><path d="M5 12v9h14v-9M12 8v13M12 8H7.5A2.5 2.5 0 1 1 10 5.5L12 8Zm0 0h4.5A2.5 2.5 0 1 0 14 5.5L12 8Z"/></svg><span data-i18n="gfHero">Kunst verschenken</span></a>
         <a class="btn on-hero ghost" href="#newsletter" data-i18n="b2">Newsletter abonnieren</a>
       </div>
@@ -744,6 +770,7 @@ body[data-current="start"] .hero{flex-direction:column;gap:2rem;padding-bottom:2
 
 <div class="wrap" data-page="booking">
   <section id="gruppen" style="border-top:0">
+    <div class="request-page-intro"><h2 data-i18n="requestTitle">Führung anfragen</h2><p class="sub" data-i18n="requestIntro">Wählen Sie ein Thema oder erzählen Sie mir von Ihren Wünschen. Gemeinsam planen wir Ihre private Führung.</p></div>
     <div class="split">
       <div>
         <p class="eyebrow" data-i18n="gEy">Private Führungen</p>
@@ -770,6 +797,9 @@ body[data-current="start"] .hero{flex-direction:column;gap:2rem;padding-bottom:2
           <p class="price-tax" data-i18n="prTax">Alle Preise sind Endpreise. Gemäß § 19 UStG (Kleinunternehmerregelung) wird keine Umsatzsteuer berechnet.</p>
         </div>
       <form id="anfrage">
+        <label><span data-i18n="tourChoiceLabel">Welche Führung möchten Sie anfragen?</span><select name="tour" id="tourChoice"><option value="individual" data-i18n="individualTour">Individuelle Führung (nach Wunsch)</option></select></label>
+        <p id="selectedTourNote" class="note" lang="de" aria-live="polite" hidden></p>
+        <label><span data-i18n="dateLabel">Wunschtermin (optional)</span><input type="date" name="date"></label>
         <label><span data-i18n="nameLabel">Name</span><input name="name" required autocomplete="name"></label>
         <label><span data-i18n="emailLabel">E-Mail</span><input type="email" name="email" required autocomplete="email"></label>
         <div class="row">
@@ -782,7 +812,7 @@ body[data-current="start"] .hero{flex-direction:column;gap:2rem;padding-bottom:2
           <select name="sprache"><option value="it" data-i18n="italianOption">Italienisch</option><option value="de" data-i18n="germanOption">Deutsch</option><option value="en" data-i18n="englishOption">Englisch</option></select>
         </label>
         <label><span data-i18n="messageLabel">Nachricht</span><textarea name="msg" rows="4" placeholder="Museum, mögliche Termine, Interessen …" data-i18n-placeholder="messagePlaceholder"></textarea></label>
-        <button class="btn" type="submit" id="subBtn">Anfrage per E-Mail vorbereiten</button>
+        <button class="btn" type="submit" id="subBtn">Anfrage senden</button>
         <p class="note" id="subNote">Es öffnet sich Ihr E-Mail-Programm. Ihre Anfrage wird erst versendet, wenn Sie dort auf „Senden“ klicken.</p>
         <p class="note form-privacy"><span data-i18n="privacyForm">Informationen zur Verarbeitung Ihrer Angaben:</span> <a href="#datenschutz" data-i18n="privacyLink">Datenschutzerklärung</a></p>
       </form>
@@ -795,7 +825,9 @@ body[data-current="start"] .hero{flex-direction:column;gap:2rem;padding-bottom:2
 
 
   <section id="touren" class="tours-page" data-page="touren" aria-labelledby="toursTitle">
-    <h2 id="toursTitle" data-i18n="navTours">Themen</h2>
+    <h2 id="toursTitle" data-i18n="tourTitle">Führungen &amp; Themen</h2>
+    <p class="sub" data-i18n="tourIntro">Entdecken Sie Kunst und Geschichte in Münchens Museen – in ausgewählten Themenführungen oder ganz individuell.</p>
+    <div id="tourCatalogue" class="tour-catalogue" lang="de"></div>
   </section>
 
   <section id="projekte" class="projects-page" data-page="projekte" aria-labelledby="projectsTitle">
@@ -818,7 +850,7 @@ body[data-current="start"] .hero{flex-direction:column;gap:2rem;padding-bottom:2
       <p>Kunsthistorikerin, Archäologin und Kunstvermittlerin. Individuelle Museumsführungen und Workshops.</p>
       <h3>Umsatzsteuer</h3>
       <p>Gemäß § 19 UStG (Kleinunternehmerregelung) wird keine Umsatzsteuer berechnet.</p>
-      <h3>Bildnachweise</h3><ul class="image-credits"><li>Alte Pinakothek: Triptychon, <a href="https://commons.wikimedia.org/wiki/File:Alte_Pinakothek,_Treppenhaus.jpg" target="_blank" rel="noopener noreferrer">Alte Pinakothek, Treppenhaus.jpg</a> — CC BY-SA 4.0 (<a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener noreferrer">Lizenz</a>). Für die Darstellung verkleinert und im Kartenformat beschnitten.</li><li>Glyptothek: Daderot, <a href="https://commons.wikimedia.org/wiki/File:Interior,_Glyptothek_Munich_-_DSC07346.JPG" target="_blank" rel="noopener noreferrer">Interior, Glyptothek Munich - DSC07346.JPG</a> — Public domain. Für die Darstellung verkleinert und im Kartenformat beschnitten.</li><li>Antikensammlungen: Penthesilea-Maler (Werk); Wikimedia Commons (Reproduktion), <a href="https://commons.wikimedia.org/wiki/File:Apollo_Tityos_Staatliche_Antikensammlungen_2689.jpg" target="_blank" rel="noopener noreferrer">Apollo Tityos Staatliche Antikensammlungen 2689.jpg</a> — Public domain. Für die Darstellung verkleinert und im Kartenformat beschnitten.</li><li>Sammlung Schack: Moritz von Schwind, <a href="https://commons.wikimedia.org/wiki/File:Moritz_von_Schwind_-_Morgenstunde_-_1858.jpeg" target="_blank" rel="noopener noreferrer">Moritz von Schwind - Morgenstunde - 1858.jpeg</a> — Public domain. Für die Darstellung verkleinert und im Kartenformat beschnitten.</li><li>Pinakothek der Moderne: Schlaier, <a href="https://commons.wikimedia.org/wiki/File:Pinakothek_der_Moderne_M%C3%BCnchen_Rotunde_2.JPG" target="_blank" rel="noopener noreferrer">Rotunde</a> — <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 3.0</a>. Verkleinert und im Kartenformat beschnitten.</li><li>Gutscheinmotiv: Peter Paul Rubens, Rubens und Isabella Brant in der Geißblattlaube, Bayerische Staatsgemäldesammlungen – Alte Pinakothek München — <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>. Ausschnitt, eingefärbt.</li></ul><p>Bearbeitete Bilder unter einer CC BY-SA-Lizenz stehen unter der jeweils angegebenen Lizenz.</p>
+      <h3>Bildnachweise zum Themenkatalog</h3><ul id="tourImageCredits" class="image-credits"></ul><h3>Bildnachweise</h3><ul class="image-credits"><li>Alte Pinakothek: Triptychon, <a href="https://commons.wikimedia.org/wiki/File:Alte_Pinakothek,_Treppenhaus.jpg" target="_blank" rel="noopener noreferrer">Alte Pinakothek, Treppenhaus.jpg</a> — CC BY-SA 4.0 (<a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener noreferrer">Lizenz</a>). Für die Darstellung verkleinert und im Kartenformat beschnitten.</li><li>Glyptothek: Daderot, <a href="https://commons.wikimedia.org/wiki/File:Interior,_Glyptothek_Munich_-_DSC07346.JPG" target="_blank" rel="noopener noreferrer">Interior, Glyptothek Munich - DSC07346.JPG</a> — Public domain. Für die Darstellung verkleinert und im Kartenformat beschnitten.</li><li>Antikensammlungen: Penthesilea-Maler (Werk); Wikimedia Commons (Reproduktion), <a href="https://commons.wikimedia.org/wiki/File:Apollo_Tityos_Staatliche_Antikensammlungen_2689.jpg" target="_blank" rel="noopener noreferrer">Apollo Tityos Staatliche Antikensammlungen 2689.jpg</a> — Public domain. Für die Darstellung verkleinert und im Kartenformat beschnitten.</li><li>Sammlung Schack: Moritz von Schwind, <a href="https://commons.wikimedia.org/wiki/File:Moritz_von_Schwind_-_Morgenstunde_-_1858.jpeg" target="_blank" rel="noopener noreferrer">Moritz von Schwind - Morgenstunde - 1858.jpeg</a> — Public domain. Für die Darstellung verkleinert und im Kartenformat beschnitten.</li><li>Pinakothek der Moderne: Schlaier, <a href="https://commons.wikimedia.org/wiki/File:Pinakothek_der_Moderne_M%C3%BCnchen_Rotunde_2.JPG" target="_blank" rel="noopener noreferrer">Rotunde</a> — <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 3.0</a>. Verkleinert und im Kartenformat beschnitten.</li><li>Gutscheinmotiv: Peter Paul Rubens, Rubens und Isabella Brant in der Geißblattlaube, Bayerische Staatsgemäldesammlungen – Alte Pinakothek München — <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>. Ausschnitt, eingefärbt.</li></ul><p>Bearbeitete Bilder unter einer CC BY-SA-Lizenz stehen unter der jeweils angegebenen Lizenz.</p>
       <p class="legal-date">Stand: 13. Oktober 2026</p>
     </div>
   </section>
@@ -903,6 +935,244 @@ body[data-current="start"] .hero{flex-direction:column;gap:2rem;padding-bottom:2
 <button type="button" id="toTop" class="back-to-top" hidden><span aria-hidden="true">↑</span><span data-i18n="toTop">Nach oben</span></button>
 
 
+<script id="tourData">
+var TOUR_CATALOGUE = {
+  "museums": [
+    {
+      "id": "alte",
+      "title": "Alte Pinakothek"
+    },
+    {
+      "id": "neue",
+      "title": "Neue Pinakothek",
+      "note": "Die Neue Pinakothek ist wegen Sanierung geschlossen. Ausgewählte Werke sind in der Alten Pinakothek und der Sammlung Schack zu sehen. Den tatsächlichen Besuchsort und die ausgestellten Werke klären wir vor der Führung; die Abbildungen sind Themenbeispiele.",
+      "source": "https://www.pinakothek.de/de/ausstellung/von-turner-bis-van-gogh"
+    },
+    {
+      "id": "glypto",
+      "title": "Glyptothek"
+    },
+    {
+      "id": "antike",
+      "title": "Staatliche Antikensammlungen"
+    },
+    {
+      "id": "abguss",
+      "title": "Museum für Abgüsse Klassischer Bildwerke München"
+    },
+    {
+      "id": "schack",
+      "title": "Sammlung Schack"
+    }
+  ],
+  "tours": [
+    {
+      "id": "alte-highlights",
+      "museum": "alte",
+      "title": "Highlights der Alten Pinakothek",
+      "description": "Eine Begegnung mit Meisterwerken europäischer Malerei. Gemeinsam entdecken wir Bildgeschichten, überraschende Details und unterschiedliche Arten des Sehens.",
+      "image": {
+        "src": "assets/tours/alte-highlights.jpg",
+        "alt": "Raffael, Madonna Tempi",
+        "author": "GoldenArtists",
+        "source": "https://commons.wikimedia.org/wiki/File:Tempi_Madonna_-_Raphael.jpg",
+        "license": "Public domain",
+        "licenseURL": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "id": "rubens",
+      "museum": "alte",
+      "title": "Rubens in der Alten Pinakothek",
+      "description": "Dynamische Körper, leuchtende Farben und große Erzählungen: Wir erkunden Rubens’ Bildsprache und die Welt der barocken Malerei.",
+      "image": {
+        "src": "assets/tours/rubens.jpg",
+        "alt": "Peter Paul Rubens, Rubens und Isabella Brant in der Geißblattlaube",
+        "author": "Peter Paul Rubens",
+        "source": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_Peter_Paul_Rubens_-_The_Artist_and_His_First_Wife,_Isabella_Brant,_in_the_Honeysuckle_Bower.jpg",
+        "license": "Public domain",
+        "licenseURL": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "id": "portraits",
+      "museum": "alte",
+      "title": "Porträts in der Alten Pinakothek",
+      "description": "Was verrät ein Porträt über einen Menschen – und was bleibt verborgen? Kleidung, Blick und Gesten erzählen von Identität, Status und Selbstinszenierung.",
+      "image": {
+        "src": "assets/tours/portraits.jpg",
+        "alt": "Albrecht Dürer, Selbstbildnis von 1500",
+        "author": "Albrecht Dürer",
+        "source": "https://commons.wikimedia.org/wiki/File:Albrecht_D%C3%BCrer_-_1500_self-portrait_(High_resolution_and_detail).jpg",
+        "license": "Public domain",
+        "licenseURL": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "id": "landscape",
+      "museum": "neue",
+      "title": "Die Entwicklung der Landschaftsmalerei in der Neuen Pinakothek",
+      "description": "Von Naturbeobachtung zu Sehnsuchtsbildern: Wir verfolgen, wie die Landschaft im 19. Jahrhundert zum eigenständigen Thema und Ausdruck innerer Erfahrungen wird.",
+      "image": {
+        "src": "assets/tours/landscape.jpg",
+        "alt": "Caspar David Friedrich, Riesengebirgslandschaft mit aufsteigendem Nebel",
+        "author": "Caspar David Friedrich",
+        "source": "https://commons.wikimedia.org/wiki/File:Caspar_David_Friedrich_-_Riesengebirge_Landscape_with_Rising_Fog_-_WGA8257.jpg",
+        "license": "Public domain",
+        "licenseURL": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "id": "postimpressionism",
+      "museum": "neue",
+      "title": "Postimpressionismus in der Neuen Pinakothek",
+      "description": "Farbe, Form und ein neuer Blick auf die Welt: Ausgewählte Werke eröffnen Perspektiven auf die künstlerischen Experimente nach dem Impressionismus. Die konkrete Werkauswahl richtet sich nach der aktuellen Ausstellung.",
+      "image": {
+        "src": "assets/tours/postimpressionism.jpg",
+        "alt": "Vincent van Gogh, Sonnenblumen, Münchner Fassung",
+        "author": "Vincent van Gogh",
+        "source": "https://commons.wikimedia.org/wiki/File:Vincent_Willem_van_Gogh_128.jpg",
+        "license": "Public domain",
+        "licenseURL": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "id": "glypto-highlights",
+      "museum": "glypto",
+      "title": "Highlights der Glyptothek",
+      "description": "Griechische und römische Skulpturen erzählen von Göttern, Menschen und ihren Idealen. Ein gemeinsamer Rundgang zu ausgewählten Höhepunkten der Sammlung.",
+      "image": {
+        "src": "assets/tours/glypto-highlights.jpg",
+        "alt": "Barberinischer Faun im Innenraum der Glyptothek",
+        "author": "Daderot",
+        "source": "https://commons.wikimedia.org/wiki/File:Interior,_Glyptothek_Munich_-_DSC07359.JPG",
+        "license": "Public domain",
+        "licenseURL": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "id": "body-beauty",
+      "museum": "glypto",
+      "title": "Body and Beauty – Der Reiz der antiken Skulptur",
+      "description": "Ideale Körper, Bewegung und überraschende Abweichungen: Wir betrachten, wie antike Skulpturen Schönheit gestalten und welche Vorstellungen dahinterstehen.",
+      "image": {
+        "src": "assets/tours/body-beauty.jpg",
+        "alt": "Seilenos mit Weinschlauch, Glyptothek München",
+        "author": "Unknown artist Unknown artist",
+        "source": "https://commons.wikimedia.org/wiki/File:Seilenos_-_221_-_Glyptothek_Munich_-_DSC07361.jpg",
+        "license": "CC0",
+        "licenseURL": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+      }
+    },
+    {
+      "id": "sculpture-history",
+      "museum": "glypto",
+      "title": "Die Geschichte der Skulptur in der Glyptothek",
+      "description": "Vom archaischen Standbild zur bewegten Figur: An ausgewählten Werken verfolgen wir Veränderungen in Körperdarstellung, Material und Ausdruck.",
+      "image": {
+        "src": "assets/tours/sculpture-history.jpg",
+        "alt": "Kouros von Tenea, Glyptothek München",
+        "author": "Daderot",
+        "source": "https://commons.wikimedia.org/wiki/File:Kouros_of_Tenea_-_168_-_Glyptothek_Munich_-_DSC07368a.jpg",
+        "license": "CC0",
+        "licenseURL": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+      }
+    },
+    {
+      "id": "antikensammlung",
+      "museum": "antike",
+      "title": "Highlights der Antikensammlungen",
+      "description": "Bilder auf Vasen, kostbare Objekte und Spuren des Alltags eröffnen die Welt der Antike. Wir entdecken die Geschichten hinter ausgewählten Stücken.",
+      "image": {
+        "src": "assets/tours/antikensammlung.jpg",
+        "alt": "Exekias, Dionysos-Schale, Staatliche Antikensammlungen",
+        "author": "Exekias",
+        "source": "https://commons.wikimedia.org/wiki/File:Exekias_Dionysos_white.jpg",
+        "license": "Public domain",
+        "licenseURL": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "id": "abguss",
+      "museum": "abguss",
+      "title": "Highlights des Abgussmuseums",
+      "description": "Antike Skulpturen im Vergleich: Gipsabgüsse machen Formen, Details und Zusammenhänge unmittelbar sichtbar und erzählen zugleich von der Geschichte des Sammelns.",
+      "image": {
+        "src": "assets/tours/abguss.jpg",
+        "alt": "Gipsabguss des Apollon vom Westgiebel des Zeustempels in Olympia, Abgussmuseum München",
+        "author": "Plaster cast of a sculpture by the Olympia Master",
+        "source": "https://commons.wikimedia.org/wiki/File:Apollo_west_pediment_Olympia_copy_MFA_Munich.jpg",
+        "license": "Public domain",
+        "licenseURL": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "id": "schack-highlights",
+      "museum": "schack",
+      "title": "Spitzenwerke der Sammlung Schack",
+      "description": "Zwischen Landschaft, Mythos und poetischer Erzählung: Wir begegnen ausgewählten Werken des 19. Jahrhunderts und der persönlichen Sammlungsidee Adolf Friedrich von Schacks.",
+      "image": {
+        "src": "assets/tours/schack-highlights.jpg",
+        "alt": "Moritz von Schwind, Morgenstunde, Sammlung Schack",
+        "author": "Moritz von Schwind (Werk)",
+        "source": "https://commons.wikimedia.org/wiki/File:Moritz_von_Schwind_-_Morgenstunde_-_1858.jpeg",
+        "license": "Public domain",
+        "licenseURL": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "id": "schack-spitzweg",
+      "museum": "schack",
+      "title": "Karl Spitzweg in der Sammlung Schack",
+      "description": "Kleine Szenen, feiner Humor und genau beobachtete Figuren: Wir entdecken Carl Spitzwegs erzählerische Malerei und ihre überraschenden Details.",
+      "image": {
+        "src": "assets/tours/schack-spitzweg.jpg",
+        "alt": "Carl Spitzweg, Spanisches Ständchen, Sammlung Schack",
+        "author": "Carl Spitzweg",
+        "source": "https://commons.wikimedia.org/wiki/File:Carl-spitzweg-spanisches-staendchen.jpg",
+        "license": "Public domain",
+        "licenseURL": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    }
+  ]
+};
+function initializeTours(){
+  var root=document.getElementById("tourCatalogue"),select=document.getElementById("tourChoice"),credits=document.getElementById("tourImageCredits");
+  TOUR_CATALOGUE.museums.forEach(function(museum){
+    var group=document.createElement("section");group.className="tour-museum";group.id="themes-"+museum.id;
+    var heading=document.createElement("h3");heading.textContent=museum.title;group.appendChild(heading);
+    if(museum.note){var note=document.createElement("p");note.className="tour-location-note";note.textContent=museum.note;group.appendChild(note);}
+    var grid=document.createElement("div");grid.className="tour-items";group.appendChild(grid);
+    var optgroup=document.createElement("optgroup");optgroup.label=museum.title;
+    TOUR_CATALOGUE.tours.filter(function(tour){return tour.museum===museum.id;}).forEach(function(tour){
+      var card=document.createElement("article");card.className="tour-entry";card.lang="de";
+      var frame=document.createElement("figure");frame.className="tour-artwork";
+      var image=document.createElement("img");image.src=tour.image.src;image.alt=tour.image.alt;image.loading="lazy";image.decoding="async";frame.appendChild(image);card.appendChild(frame);
+      var title=document.createElement("h4");title.textContent=tour.title;card.appendChild(title);
+      var text=document.createElement("p");text.textContent=tour.description;card.appendChild(text);
+      var link=document.createElement("a");link.className="tour-enquiry";link.href="#anfrage/"+tour.id;link.dataset.i18n="tourRequest";link.textContent="Führung anfragen ↗";link.addEventListener("click",function(){select.value=tour.id;updateTourNote();});card.appendChild(link);grid.appendChild(card);
+      var option=document.createElement("option");option.value=tour.id;option.textContent=tour.title;optgroup.appendChild(option);
+      var credit=document.createElement("li");credit.appendChild(document.createTextNode(tour.image.alt+" — "+tour.image.author+". "));
+      var source=document.createElement("a");source.href=tour.image.source;source.target="_blank";source.rel="noopener noreferrer";source.textContent="Quelle";credit.appendChild(source);credit.appendChild(document.createTextNode(" · "));
+      var licence=document.createElement("a");licence.href=tour.image.licenseURL;licence.target="_blank";licence.rel="noopener noreferrer";licence.textContent=tour.image.license;credit.appendChild(licence);credit.appendChild(document.createTextNode(". Für die Website verkleinert und komprimiert."));credits.appendChild(credit);
+    });
+    select.appendChild(optgroup);root.appendChild(group);
+  });
+  select.addEventListener("change",updateTourNote);
+}
+function updateTourNote(){
+  var select=document.getElementById("tourChoice"),note=document.getElementById("selectedTourNote");
+  var tour=TOUR_CATALOGUE.tours.find(function(t){return t.id===select.value;});
+  var museum=tour&&TOUR_CATALOGUE.museums.find(function(m){return m.id===tour.museum;});
+  note.textContent=museum&&museum.note?museum.note:"";note.hidden=!note.textContent;
+}
+function selectTourFromHash(raw){
+  var id=raw.split("/")[1]||"individual";
+  document.getElementById("tourChoice").value=TOUR_CATALOGUE.tours.some(function(t){return t.id===id;})?id:"individual";
+  updateTourNote();
+}
+initializeTours();
+</script>
 <script>
 var EMAIL = "silvia.artstories@gmail.com";
 function go(subject, body){
@@ -912,7 +1182,7 @@ document.getElementById("anfrage").addEventListener("submit", function(e){
   e.preventDefault();
   var f = new FormData(e.target);
   go("Anfrage Führung",
-    "Name: " + f.get("name") + "\nE-Mail: " + f.get("email") + "\nArt der Gruppe: " + e.target.elements.typ.selectedOptions[0].textContent +
+    "Führung: " + e.target.elements.tour.selectedOptions[0].textContent + "\nWunschtermin: " + (f.get("date") || "Noch offen") + "\nName: " + f.get("name") + "\nE-Mail: " + f.get("email") + "\nArt der Gruppe: " + e.target.elements.typ.selectedOptions[0].textContent +
     "\nPersonen: " + (f.get("personen") || "-") + "\nSprache: " + e.target.elements.sprache.selectedOptions[0].textContent + "\n\n" + (f.get("msg") || ""));
 });
 document.getElementById("news").addEventListener("submit", function(e){
@@ -1020,7 +1290,7 @@ var I18N = {
     "nSub": "Geschichten aus den Museen, neue Perspektiven und Ideen für Ihre nächste private Führung. Wenige E-Mails, mit Sorgfalt geschrieben.",
     "aEy": "Über mich",
     "aBody": "<p>Ich habe Kunstgeschichte und Klassische Archäologie in Heidelberg, Lyon und München studiert und arbeite als Kunstvermittlerin in verschiedenen Museen Münchens. Derzeit promoviere ich an der Ludwig-Maximilians-Universität München im Fach Kunstgeschichte zur Rezeption der Antike im 18. Jahrhundert. Auf Deutsch, Englisch und Italienisch begleite ich Sie durch Museen und Ausstellungen – mit wissenschaftlicher Genauigkeit, Neugier und einem besonderen Blick für Details.</p>",
-    "subBtn": "Anfrage per E-Mail vorbereiten",
+    "subBtn": "Anfrage senden",
     "subNote": "Es öffnet sich Ihr E-Mail-Programm. Ihre Anfrage wird erst versendet, wenn Sie dort auf „Senden“ klicken.",
     "newsBtn": "Anmeldung per E-Mail vorbereiten",
     "newsNote": "Ihr E-Mail-Programm öffnet sich; bitte senden Sie die Anmeldung dort ab. Sie können sich jederzeit wieder abmelden.",
@@ -1068,7 +1338,16 @@ var I18N = {
     "museum6Tag": "19. Jahrhundert",
     "museum6Description": "Deutsche Malerei der Spätromantik in einem privaten Stadtpalais.",
     "museum7Tag": "Antike & Abgüsse",
-    "museum7Description": "Gipsabgüsse griechischer und römischer Skulpturen: Formen, Mythen und die Kunst des genauen Vergleichens."
+    "museum7Description": "Gipsabgüsse griechischer und römischer Skulpturen: Formen, Mythen und die Kunst des genauen Vergleichens.",
+    "navRequest": "Anfragen",
+    "tourTitle": "Führungen & Themen",
+    "tourIntro": "Entdecken Sie Kunst und Geschichte in Münchens Museen – in ausgewählten Themenführungen oder ganz individuell.",
+    "tourRequest": "Führung anfragen ↗",
+    "tourChoiceLabel": "Welche Führung möchten Sie anfragen?",
+    "individualTour": "Individuelle Führung (nach Wunsch)",
+    "dateLabel": "Wunschtermin (optional)",
+    "requestTitle": "Führung anfragen",
+    "requestIntro": "Wählen Sie ein Thema oder erzählen Sie mir von Ihren Wünschen. Gemeinsam planen wir Ihre private Führung."
   },
   "it": {
     "navProjects": "Progetti",
@@ -1167,7 +1446,7 @@ var I18N = {
     "nSub": "Storie dai musei, nuove prospettive e idee per la vostra prossima visita privata. Poche email, scritte con cura.",
     "aEy": "Chi sono",
     "aBody": "<p>Ho studiato Storia dell'Arte e Archeologia Classica a Heidelberg, Lione e Monaco di Baviera, e lavoro come Kunstvermittlerin in diversi musei di Monaco. Attualmente sto conseguendo il dottorato in Storia dell'Arte presso la Ludwig-Maximilians-Universität di Monaco, con una ricerca sulla ricezione dell'antichità nel XVIII secolo. In tedesco, inglese e italiano vi accompagno attraverso musei e mostre — con rigore scientifico, curiosità e un occhio particolare per i dettagli.</p>",
-    "subBtn": "Prepara la richiesta via email",
+    "subBtn": "Invia richiesta",
     "subNote": "Si apre il tuo programma di posta. La richiesta viene inviata solo quando premi «Invia» nel programma.",
     "newsBtn": "Prepara l’iscrizione via email",
     "newsNote": "Si apre il tuo programma di posta: invia l’iscrizione da lì. Puoi annullarla in qualsiasi momento.",
@@ -1215,7 +1494,16 @@ var I18N = {
     "museum6Tag": "XIX secolo",
     "museum6Description": "Pittura tedesca del tardo Romanticismo in un palazzo privato.",
     "museum7Tag": "Antichità e calchi",
-    "museum7Description": "Calchi in gesso di sculture greche e romane: forme, miti e l’arte di osservare attraverso il confronto."
+    "museum7Description": "Calchi in gesso di sculture greche e romane: forme, miti e l’arte di osservare attraverso il confronto.",
+    "navRequest": "Richieste",
+    "tourTitle": "Visite e temi",
+    "tourIntro": "Scoprite arte e storia nei musei di Monaco con visite tematiche o un percorso pensato per voi. I titoli e le descrizioni del catalogo sono in tedesco.",
+    "tourRequest": "Richiedi una visita ↗",
+    "tourChoiceLabel": "Quale visita desiderate richiedere?",
+    "individualTour": "Visita personalizzata (secondo i vostri desideri)",
+    "dateLabel": "Data desiderata (facoltativa)",
+    "requestTitle": "Richiedi una visita",
+    "requestIntro": "Scegliete un tema o raccontatemi i vostri desideri. Progettiamo insieme la vostra visita privata."
   },
   "en": {
     "navProjects": "Projects",
@@ -1314,7 +1602,7 @@ var I18N = {
     "nSub": "Stories from the museums, fresh perspectives and ideas for your next private tour. A few emails, written with care.",
     "aEy": "About me",
     "aBody": "<p>I studied Art History and Classical Archaeology in Heidelberg, Lyon and Munich, and work as a museum guide (Kunstvermittlerin) in several museums across Munich. I am currently pursuing a doctorate in Art History at Ludwig-Maximilians-Universität München, researching the reception of antiquity in the 18th century. In German, English and Italian, I guide you through museums and exhibitions — with scholarly precision, curiosity and a keen eye for detail.</p>",
-    "subBtn": "Prepare enquiry by email",
+    "subBtn": "Send enquiry",
     "subNote": "Your email app opens. Your enquiry is sent only when you press “Send” in that app.",
     "newsBtn": "Prepare subscription by email",
     "newsNote": "Your email app opens; please send your subscription from there. You can unsubscribe at any time.",
@@ -1362,7 +1650,16 @@ var I18N = {
     "museum6Tag": "19th century",
     "museum6Description": "German late Romantic painting in a private city palace.",
     "museum7Tag": "Antiquity & plaster casts",
-    "museum7Description": "Plaster casts of Greek and Roman sculptures: forms, myths and the art of looking closely through comparison."
+    "museum7Description": "Plaster casts of Greek and Roman sculptures: forms, myths and the art of looking closely through comparison.",
+    "navRequest": "Enquiries",
+    "tourTitle": "Tours & themes",
+    "tourIntro": "Discover art and history in Munich’s museums through selected themed tours or a visit tailored to you. The catalogue titles and descriptions are in German.",
+    "tourRequest": "Request a tour ↗",
+    "tourChoiceLabel": "Which tour would you like to enquire about?",
+    "individualTour": "Individual tour (tailored to your wishes)",
+    "dateLabel": "Preferred date (optional)",
+    "requestTitle": "Request a tour",
+    "requestIntro": "Choose a theme or tell me about your interests. Together we can plan your private tour."
   }
 };
 function applyLang(lang){
@@ -1392,7 +1689,7 @@ document.querySelectorAll(".langsw button").forEach(function(b){
 applyLang("de");
 
 /* Seitennavigation */
-var PAGE_OF={impressum:"impressum",datenschutz:"datenschutz",projekte:"projekte",touren:"touren",privat:"privat",oeffentlich:"privat",fuehrungen:"privat",bilder:"start",gruppen:"start",anfrage:"start",gutschein:"gutschein",termine:"privat",publikationen:"ueber-mich",newsletter:"newsletter","ueber-mich":"ueber-mich"};
+var PAGE_OF={impressum:"impressum",datenschutz:"datenschutz",projekte:"projekte",touren:"touren",privat:"privat",oeffentlich:"privat",fuehrungen:"privat",bilder:"start",gruppen:"start",anfrage:"anfrage",gutschein:"gutschein",termine:"privat",publikationen:"ueber-mich",newsletter:"newsletter","ueber-mich":"ueber-mich"};
 function setHdr(){var h=document.querySelector("header");if(h)document.body.style.setProperty("--hdr",(h.parentNode.offsetHeight||80)+"px");}
 /* Startseite: Titel „L'arte di guardare“ wächst und wird scharf (Variante C) */
 var LAST_PAGE=null;
@@ -1422,12 +1719,14 @@ function animateHero(){
 window.addEventListener("pageshow",function(e){if(e.persisted&&document.body.getAttribute("data-current")==="start")animateHero();});
 function route(){
   if(typeof closeMenu==="function")closeMenu();
-  var h=decodeURIComponent((location.hash||"").slice(1));
+  var rawHash=decodeURIComponent((location.hash||"").slice(1));
+  var h=rawHash.split("/")[0];
   var p=PAGE_OF[h]||"start";
+  if(h==="anfrage")selectTourFromHash(rawHash);
   document.body.setAttribute("data-current",p);
   document.querySelectorAll("[data-page]").forEach(function(el){
     var pg=el.getAttribute("data-page");
-    el.hidden=!(pg===p||(pg==="booking"&&p==="start")||(pg==="sub"&&p!=="start"));
+    el.hidden=!(pg===p||(pg==="booking"&&(p==="start"||p==="anfrage"))||(pg==="sub"&&p!=="start"));
   });
   document.querySelectorAll("nav a").forEach(function(a){
     if(a.getAttribute("href")==="#"+p)a.setAttribute("aria-current","page");else a.removeAttribute("aria-current");
