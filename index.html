@@ -597,7 +597,7 @@ body[data-current="start"] .hero{flex-direction:column;gap:2rem;padding-bottom:2
 .home-gallery{width:calc(100% + 2 * var(--hero-gutter));max-width:none;min-width:0;flex-shrink:0}
 .home-gallery .gallery-track .ph-w{width:clamp(15rem,calc((var(--gallery-viewport,100vw) - 2.625rem)/4),28rem)}
 @media(max-width:1100px){.home-gallery .gallery-track .ph-w{width:calc((var(--gallery-viewport,100vw) - 1.75rem)/3)}}
-@media(max-width:700px){.home-gallery .gallery-track .ph-w{width:calc(var(--gallery-viewport,100vw)*.78)}}
+@media(max-width:700px){.home-gallery .gallery-track .ph-w{width:min(calc(var(--gallery-viewport,100vw)*.6),15rem)}}
 
 /* Keep the biography in the empty right side of the photograph. */
 .about-grid{position:relative;isolation:isolate;grid-template-columns:minmax(0,1fr)!important;gap:0!important}
