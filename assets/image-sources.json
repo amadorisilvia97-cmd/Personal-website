@@ -1,0 +1,32 @@
+{
+  "vangogh": {
+    "author": "Bayerische Staatsgemäldesammlungen",
+    "source": "https://www.sammlung.pinakothek.de/de/artwork/Y0GR9B7LRX",
+    "license": "CC BY-SA 4.0",
+    "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "rubens": {
+    "author": "Bayerische Staatsgemäldesammlungen",
+    "source": "https://www.sammlung.pinakothek.de/de/artwork/Y0GRkKX4RX",
+    "license": "CC BY-SA 4.0",
+    "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "moderne": {
+    "author": "GFreihalter",
+    "source": "https://commons.wikimedia.org/wiki/File:M%C3%BCnchen-Maxvorstadt_Pinakothek_der_Moderne_Rotunde_755.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "antike": {
+    "author": "MaplesyrupSushi",
+    "source": "https://commons.wikimedia.org/wiki/File:Photograph_taken_in_the_interior_of_the_Staatliche_Antikensammlungen_(State_Collections_of_Antiquities),_K%C3%B6nigsplatz,_Munich,_Bavaria,_Germany,_23_July_2026_06.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "glypto": {
+    "author": "Jorge Royan",
+    "source": "https://commons.wikimedia.org/wiki/File:Munich_-_Two_young_women_drawing_-_5814.jpg",
+    "license": "CC BY-SA 3.0",
+    "licenseURL": "https://creativecommons.org/licenses/by-sa/3.0"
+  }
+}
