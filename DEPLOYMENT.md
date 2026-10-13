@@ -1,6 +1,8 @@
 # Website deployment
 
-The index.html file is the complete website, with embedded images, fonts, styles, and scripts. No build step is required.
+The index.html file contains the website styles, scripts, embedded fonts, and main page images. Keep the assets/ folder with it: assets/tours/ contains the optimized tour catalogue images, and assets/social-preview.jpg is the social sharing preview. No build step is required.
+
+The twelve tour entries, museum grouping, image credits, and enquiry options are generated from the shared TOUR_CATALOGUE object in index.html. Theme links use #anfrage/<tour-id>; a direct #anfrage visit defaults to an individual tour. The form prepares an email draft, including the selected tour and optional preferred date. It does not confirm a booking or send mail directly.
 
 ## GitHub Pages
 
