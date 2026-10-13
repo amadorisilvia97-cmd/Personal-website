@@ -78,6 +78,17 @@
 .project-entry{max-width:48rem;margin-top:2rem}
 .project-entry h3{font-size:clamp(1.75rem,4vw,2.25rem);margin-bottom:1.25rem}
 .project-image{display:block;width:100%;height:auto}
+/* Legal pages use the existing cream, burgundy and serif typography. */
+.legal-page{border-top:0}
+.legal-copy{max-width:48rem;margin-top:2rem;overflow-wrap:anywhere}
+.legal-copy h3{font-size:1.5rem;margin:2rem 0 .75rem}
+.legal-copy p{margin:0 0 1rem}
+.legal-copy address{font-style:normal;line-height:1.8}
+.legal-copy a{text-underline-offset:3px}
+.legal-date{font-size:.8125rem;color:var(--muted);margin-top:2rem!important}
+.footer-legal{display:flex;justify-content:center;flex-wrap:wrap;gap:.25rem 1.25rem;margin-bottom:.75rem}
+.footer-legal a{display:inline-flex;align-items:center;min-height:2.75rem;color:var(--cream);text-underline-offset:3px}
+.footer-legal a:focus-visible{outline:2px solid var(--cream);outline-offset:3px}
 </style>
 <style>
 
@@ -793,6 +804,53 @@ body[data-current="start"] .hero{flex-direction:column;gap:2rem;padding-bottom:2
     </article>
   </section>
 
+  <section id="impressum" class="legal-page" data-page="impressum" aria-labelledby="impressumTitle" lang="de">
+    <h2 id="impressumTitle">Impressum</h2>
+    <div class="legal-copy">
+      <h3>Angaben gemäß § 5 DDG</h3>
+      <p>Silvia Amadori</p>
+      <h3>Kontakt</h3>
+      <p>E-Mail: <a href="mailto:silvia.artstories@gmail.com">silvia.artstories@gmail.com</a></p>
+      <h3>Tätigkeit</h3>
+      <p>Kunsthistorikerin, Archäologin und Kunstvermittlerin. Individuelle Museumsführungen und Workshops.</p>
+      <h3>Umsatzsteuer</h3>
+      <p>Gemäß § 19 UStG (Kleinunternehmerregelung) wird keine Umsatzsteuer berechnet.</p>
+      <p class="legal-date">Stand: 13. Oktober 2026</p>
+    </div>
+  </section>
+
+  <section id="datenschutz" class="legal-page" data-page="datenschutz" aria-labelledby="privacyTitle" lang="de">
+    <h2 id="privacyTitle">Datenschutzerklärung</h2>
+    <div class="legal-copy">
+      <p>Hier erfahren Sie, welche personenbezogenen Daten bei der Nutzung von silviaamadori.com verarbeitet werden und welche Rechte Sie haben.</p>
+      <h3>1. Verantwortliche</h3>
+      <p>Silvia Amadori<br>E-Mail: <a href="mailto:silvia.artstories@gmail.com">silvia.artstories@gmail.com</a></p>
+      <h3>2. Bereitstellung der Website</h3>
+      <p>Diese Website wird über GitHub Pages bereitgestellt. Beim Aufruf erhält der Hostinganbieter GitHub technische Verbindungsdaten, insbesondere Ihre IP-Adresse. GitHub protokolliert IP-Adressen von Besucherinnen und Besuchern für Sicherheitszwecke. Weitere technische Informationen können etwa der Zeitpunkt des Zugriffs, die aufgerufene Seite sowie Browser- und Geräteinformationen sein.</p>
+      <p>Die Verarbeitung dient der Auslieferung und dem sicheren Betrieb der Website. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO; das berechtigte Interesse liegt in einer funktionsfähigen und sicheren Online-Präsenz. Die Übermittlung der technischen Verbindungsdaten ist für den Abruf erforderlich.</p>
+      <p>GitHub verarbeitet Daten auch in den USA. Informationen zu Empfängern, Speicherdauer und den eingesetzten Übermittlungsmechanismen, darunter das EU-US Data Privacy Framework und Standardvertragsklauseln, finden Sie in der <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener noreferrer">Datenschutzerklärung von GitHub</a>. Auf die von GitHub festgelegte Dauer der Sicherheitsprotokollierung habe ich keinen unmittelbaren Einfluss.</p>
+      <h3>3. Cookies, Schriftarten und Bilder</h3>
+      <p>Der Website-Code setzt keine Cookies ein und speichert keine Angaben in Local Storage oder Session Storage. Es werden keine Analyse-, Werbe- oder Trackingdienste eingebunden. Die Schriftarten und Bilder sind direkt in der Website enthalten; beim Laden werden dafür keine Verbindungen zu Google Fonts oder externen Bildanbietern aufgebaut.</p>
+      <h3>4. Anfragen per E-Mail</h3>
+      <p>Das Anfrageformular öffnet Ihr eigenes E-Mail-Programm mit einem vorbereiteten Nachrichtentext. Es sendet selbst keine Nachricht und übermittelt Ihre Eingaben nicht an einen Formularserver. Erst wenn Sie die E-Mail versenden, erhalte ich die von Ihnen angegebenen Daten, beispielsweise Name, E-Mail-Adresse, Gruppenart, Personenzahl, Sprache und Nachricht.</p>
+      <p>Diese Angaben verwende ich zur Bearbeitung Ihrer Anfrage und gegebenenfalls zur Vorbereitung oder Durchführung einer Führung. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO bei vertragsbezogenen Anfragen, ansonsten Art. 6 Abs. 1 lit. f DSGVO aufgrund meines berechtigten Interesses an der Beantwortung Ihrer Nachricht. Die Angaben sind freiwillig; ohne eine Kontaktmöglichkeit kann ich Ihre Anfrage nicht beantworten.</p>
+      <p>Das Empfängerpostfach wird bei Gmail betrieben. Google und Ihr eigener E-Mail-Anbieter können die Nachricht und Verbindungsdaten verarbeiten. Dabei können Daten auch außerhalb der EU verarbeitet werden. Informationen zur Verarbeitung und zu internationalen Übermittlungen durch Google finden Sie in der <a href="https://policies.google.com/privacy?hl=de" target="_blank" rel="noopener noreferrer">Datenschutzerklärung von Google</a>.</p>
+      <p>Anfragen werden gelöscht, sobald sie nicht mehr für die Bearbeitung benötigt werden. Soweit gesetzliche Aufbewahrungspflichten bestehen oder Daten zur Geltendmachung, Ausübung oder Verteidigung von Rechtsansprüchen erforderlich sind, werden sie für die entsprechende Dauer aufbewahrt.</p>
+      <h3>5. Newsletter-Anfragen</h3>
+      <p>Auch die Newsletter-Anmeldung öffnet lediglich Ihr E-Mail-Programm. Eine automatische Aufnahme in eine Verteilerliste findet durch das Formular nicht statt. Mit dem Versand Ihrer Anmeldung bitten Sie darum, Informationen zu Führungen und Neuigkeiten zu erhalten. Ihre E-Mail-Adresse wird für diesen Zweck auf Grundlage Ihrer Einwilligung gemäß Art. 6 Abs. 1 lit. a DSGVO verarbeitet.</p>
+      <p>Sie können Ihre Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen, etwa durch eine E-Mail an <a href="mailto:silvia.artstories@gmail.com">silvia.artstories@gmail.com</a>. Die Rechtmäßigkeit der bisherigen Verarbeitung bleibt unberührt. Die Adresse wird für den Newsletter bis zum Widerruf verwendet und danach aus dem Verteiler entfernt. Für die E-Mail-Kommunikation gelten die Angaben zu Gmail im vorstehenden Abschnitt.</p>
+      <h3>6. LinkedIn, Instagram und andere externe Links</h3>
+      <p>Die Social-Media-Symbole sind einfache Links; es werden keine Social-Media-Plugins oder eingebetteten Feeds geladen. Erst wenn Sie einen Link öffnen, besuchen Sie die externe Website. Dort gelten die Datenschutzbestimmungen des jeweiligen Anbieters; dieser kann insbesondere Ihre IP-Adresse erhalten. Die Social-Media-Links verwenden keinen Referrer, sodass die aufgerufene Seite nicht über diesen Header übermittelt wird.</p>
+      <h3>7. Ihre Rechte</h3>
+      <p>Nach Maßgabe der DSGVO haben Sie insbesondere das Recht auf Auskunft (Art. 15), Berichtigung (Art. 16), Löschung (Art. 17), Einschränkung der Verarbeitung (Art. 18) und Datenübertragbarkeit (Art. 20). Eine erteilte Einwilligung können Sie jederzeit für die Zukunft widerrufen.</p>
+      <p><strong>Widerspruchsrecht:</strong> Bei einer Verarbeitung auf Grundlage berechtigter Interessen können Sie aus Gründen, die sich aus Ihrer besonderen Situation ergeben, Widerspruch einlegen (Art. 21 DSGVO). Einer Verarbeitung für Direktwerbung können Sie jederzeit widersprechen.</p>
+      <p>Für die Ausübung Ihrer Rechte wenden Sie sich bitte an die oben genannte E-Mail-Adresse. Außerdem können Sie sich bei einer Datenschutzaufsichtsbehörde beschweren (Art. 77 DSGVO), insbesondere am Ort Ihres gewöhnlichen Aufenthalts oder Arbeitsplatzes. Für private Stellen in Bayern ist das <a href="https://www.lda.bayern.de/de/beschwerde.html" target="_blank" rel="noopener noreferrer">Bayerische Landesamt für Datenschutzaufsicht</a> zuständig.</p>
+      <h3>8. Automatisierte Entscheidungen</h3>
+      <p>Durch diese Website erfolgen keine automatisierten Entscheidungen einschließlich Profiling im Sinne von Art. 22 DSGVO.</p>
+      <p class="legal-date">Stand: 13. Oktober 2026</p>
+    </div>
+  </section>
+
   <section id="newsletter" class="news" data-page="newsletter">
     <p class="eyebrow" data-i18n="nEy">Newsletter</p>
     <h2 id="newsTitle">In <em>Kontakt</em> bleiben</h2>
@@ -834,7 +892,7 @@ body[data-current="start"] .hero{flex-direction:column;gap:2rem;padding-bottom:2
       <a class="footer-social-icon" href="https://www.instagram.com/silvia.artstories/" target="_blank" rel="noopener noreferrer" aria-label="Instagram – Silvia Amadori" title="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2.2c3.2 0 3.6 0 4.9.07 1.2.06 2 .25 2.4.42.6.24 1 .53 1.47.98.46.46.75.9.98 1.47.17.4.36 1.2.42 2.4.07 1.3.07 1.7.07 4.9s0 3.6-.07 4.9c-.06 1.2-.25 2-.42 2.4-.24.6-.53 1-.98 1.47-.46.46-.9.75-1.47.98-.4.17-1.2.36-2.4.42-1.3.07-1.7.07-4.9.07s-3.6 0-4.9-.07c-1.2-.06-2-.25-2.4-.42-.6-.24-1-.53-1.47-.98-.46-.46-.75-.9-.98-1.47-.17-.4-.36-1.2-.42-2.4-.07-1.3-.07-1.7-.07-4.9s0-3.6.07-4.9c.06-1.2.25-2 .42-2.4.24-.6.53-1 .98-1.47.46-.46.9-.75 1.47-.98.4-.17 1.2-.36 2.4-.42 1.3-.07 1.7-.07 4.9-.07zM12 0C8.74 0 8.33 0 7.05.07c-1.28.06-2.15.26-2.9.56-.8.3-1.47.72-2.14 1.38C1.35 2.68.93 3.35.63 4.15c-.3.76-.5 1.63-.56 2.9C0 8.33 0 8.74 0 12s0 3.67.07 4.95c.06 1.27.26 2.14.56 2.9.3.8.72 1.47 1.38 2.13.66.66 1.33 1.08 2.13 1.38.76.3 1.63.5 2.9.56C8.33 24 8.74 24 12 24s3.67 0 4.95-.07c1.27-.06 2.14-.26 2.9-.56.8-.3 1.47-.72 2.13-1.38.66-.66 1.08-1.33 1.38-2.13.3-.76.5-1.63.56-2.9.07-1.28.07-1.69.07-4.95s0-3.67-.07-4.95c-.06-1.27-.26-2.14-.56-2.9-.3-.8-.72-1.47-1.38-2.13C21.32 1.35 20.65.93 19.85.63c-.76-.3-1.63-.5-2.9-.56C15.67 0 15.26 0 12 0zm0 5.84A6.16 6.16 0 1 0 12 18.16 6.16 6.16 0 0 0 12 5.84zm0 10.16A4 4 0 1 1 12 8a4 4 0 0 1 0 8zm6.4-10.4a1.44 1.44 0 1 1-2.88 0 1.44 1.44 0 0 1 2.88 0z"/></svg></a>
     </div>
   </div>
-  <div class="wrap cb-foot"><span class="copyright">© 2026 Silvia Amadori. All rights reserved.</span></div>
+  <div class="wrap cb-foot"><div class="footer-legal" aria-label="Rechtliche Informationen"><a href="#impressum">Impressum</a><a href="#datenschutz">Datenschutzerklärung</a></div><span class="copyright">© 2026 Silvia Amadori. All rights reserved.</span></div>
 </footer>
 <button type="button" id="toTop" class="back-to-top" hidden><span aria-hidden="true">↑</span><span data-i18n="toTop">Nach oben</span></button>
 
@@ -881,7 +939,7 @@ var I18N = {
     aEy:"Über mich", aBody:"<p>Ich habe Kunstgeschichte und Klassische Archäologie in Heidelberg, Lyon und München studiert und arbeite als Kunstvermittlerin in verschiedenen Museen Münchens. Derzeit promoviere ich an der Ludwig-Maximilians-Universität München im Fach Kunstgeschichte zur Rezeption der Antike im 18. Jahrhundert. Auf Deutsch, Englisch und Italienisch begleite ich Sie durch Museen und Ausstellungen – mit wissenschaftlicher Genauigkeit, Neugier und einem besonderen Blick für Details.</p>",
     subBtn:"Anfrage senden", subNote:"Es öffnet sich Ihr E-Mail-Programm mit der fertig geschriebenen Nachricht.",
     newsBtn:"Anmelden", newsNote:"Sie können sich jederzeit wieder abmelden.", emailPh:"Ihre E-Mail-Adresse",
-    addr:"Kreittmayrstraße 16, München (80335)", portraitPh:"Foto folgt", role:"Kunsthistorikerin · Archäologin · Kunstvermittlerin"
+    addr:"", portraitPh:"Foto folgt", role:"Kunsthistorikerin · Archäologin · Kunstvermittlerin"
   },
   it: {
     navProjects:"Progetti",
@@ -905,7 +963,7 @@ var I18N = {
     aEy:"Chi sono", aBody:"<p>Ho studiato Storia dell'Arte e Archeologia Classica a Heidelberg, Lione e Monaco di Baviera, e lavoro come Kunstvermittlerin in diversi musei di Monaco. Attualmente sto conseguendo il dottorato in Storia dell'Arte presso la Ludwig-Maximilians-Universität di Monaco, con una ricerca sulla ricezione dell'antichità nel XVIII secolo. In tedesco, inglese e italiano vi accompagno attraverso musei e mostre — con rigore scientifico, curiosità e un occhio particolare per i dettagli.</p>",
     subBtn:"Invia richiesta", subNote:"Si apre il tuo programma di posta con il messaggio già pronto da inviare.",
     newsBtn:"Iscriviti", newsNote:"Puoi annullare l'iscrizione in qualsiasi momento.", emailPh:"La tua email",
-    addr:"Kreittmayrstraße 16, Monaco di Baviera (80335)", portraitPh:"Foto in arrivo", role:"Storica dell'arte · Archeologa · Mediatrice culturale"
+    addr:"", portraitPh:"Foto in arrivo", role:"Storica dell'arte · Archeologa · Mediatrice culturale"
   },
   en: {
     navProjects:"Projects",
@@ -929,7 +987,7 @@ var I18N = {
     aEy:"About me", aBody:"<p>I studied Art History and Classical Archaeology in Heidelberg, Lyon and Munich, and work as a museum guide (Kunstvermittlerin) in several museums across Munich. I am currently pursuing a doctorate in Art History at Ludwig-Maximilians-Universität München, researching the reception of antiquity in the 18th century. In German, English and Italian, I guide you through museums and exhibitions — with scholarly precision, curiosity and a keen eye for detail.</p>",
     subBtn:"Send request", subNote:"Your email program will open with the message already written.",
     newsBtn:"Subscribe", newsNote:"You can unsubscribe at any time.", emailPh:"Your email address",
-    addr:"Kreittmayrstraße 16, Munich (80335)", portraitPh:"Photo coming soon", role:"Art Historian · Archaeologist · Art educator"
+    addr:"", portraitPh:"Photo coming soon", role:"Art Historian · Archaeologist · Art educator"
   }
 };
 function applyLang(lang){
@@ -956,7 +1014,7 @@ document.querySelectorAll(".langsw button").forEach(function(b){
 });
 
 /* Seitennavigation */
-var PAGE_OF={projekte:"projekte",touren:"touren",privat:"privat",oeffentlich:"privat",fuehrungen:"privat",bilder:"start",gruppen:"start",anfrage:"start",gutschein:"gutschein",termine:"privat",publikationen:"ueber-mich",newsletter:"newsletter","ueber-mich":"ueber-mich"};
+var PAGE_OF={impressum:"impressum",datenschutz:"datenschutz",projekte:"projekte",touren:"touren",privat:"privat",oeffentlich:"privat",fuehrungen:"privat",bilder:"start",gruppen:"start",anfrage:"start",gutschein:"gutschein",termine:"privat",publikationen:"ueber-mich",newsletter:"newsletter","ueber-mich":"ueber-mich"};
 function setHdr(){var h=document.querySelector("header");if(h)document.body.style.setProperty("--hdr",(h.parentNode.offsetHeight||80)+"px");}
 /* Startseite: Titel „L'arte di guardare“ wächst und wird scharf (Variante C) */
 var LAST_PAGE=null;
