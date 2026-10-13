@@ -1382,6 +1382,8 @@ document.querySelectorAll(".langsw button").forEach(function(b){
   b.addEventListener("click", function(){ applyLang(b.dataset.lang); });
 });
 
+applyLang("de");
+
 /* Seitennavigation */
 var PAGE_OF={impressum:"impressum",datenschutz:"datenschutz",projekte:"projekte",touren:"touren",privat:"privat",oeffentlich:"privat",fuehrungen:"privat",bilder:"start",gruppen:"start",anfrage:"start",gutschein:"gutschein",termine:"privat",publikationen:"ueber-mich",newsletter:"newsletter","ueber-mich":"ueber-mich"};
 function setHdr(){var h=document.querySelector("header");if(h)document.body.style.setProperty("--hdr",(h.parentNode.offsetHeight||80)+"px");}
