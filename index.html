@@ -255,7 +255,7 @@ footer{padding:2.5rem 0;border-top:1px solid var(--line);color:var(--muted);font
 .pub .yr{font-family:var(--serif);font-size:1.375rem;color:var(--accent);min-width:3.5rem}
 .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:0.875rem}
 @media(max-width:700px){.gallery{grid-template-columns:repeat(2,1fr)}}
-.gallery .ph{aspect-ratio:4/3;width:100%;object-fit:cover;display:block;background:var(--surface);border:1px solid var(--line)}
+.gallery .ph{aspect-ratio:4/3;width:100%;height:auto;object-fit:cover;display:block;background:var(--surface);border:1px solid var(--line)}
 
 .card-strip{background:var(--burgundy);color:#f6f0e6;padding:2.375rem 1.5rem}
 .card-strip .in{max-width:65rem;margin:0 auto;display:flex;align-items:center;gap:2rem;flex-wrap:wrap}
@@ -721,14 +721,15 @@ body[data-current="start"] .hero{flex-direction:column;gap:2rem;padding-bottom:2
   #siteHeader .langsw{grid-column:2}
 }
 
-/* Brevo controls the embedded form; preserve its readable light appearance. */
-.news-brevo{background:var(--cream);color:#3a2e26;padding-block:2rem}
-.brevo-embed{width:100%;max-width:540px;margin-inline:auto;color-scheme:light}
-.brevo-embed iframe{display:block;width:100%;max-width:100%;height:520px;margin-inline:auto;border:0;background:var(--cream);color-scheme:light}
-.brevo-embed .note{color:#6b5c4f;font-size:.8125rem;line-height:1.6;margin:.75rem 1rem}
-.brevo-embed a{color:var(--burgundy);text-underline-offset:3px}
-.brevo-embed a:focus-visible{outline:2px solid var(--burgundy);outline-offset:3px}
-@media(max-width:600px){.brevo-embed iframe{height:580px}.news-brevo{padding-block:1rem}}
+
+/* Original newsletter typography and palette, with direct Brevo form delivery. */
+.news-native form{max-width:28.75rem;margin:1.75rem auto 0;position:relative}
+.news-native #newsEmail{display:block;margin-bottom:1rem;min-height:3rem}
+.news-native .btn{min-height:3rem}
+.news-native .note{font-size:.8125rem;line-height:1.65;margin:1rem 0 0;color:var(--muted)}
+.news-native .form-privacy{margin-top:.625rem}
+.newsletter-trap{position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden}
+@media(max-width:600px){.news-native form{padding-inline:1.125rem}.news-native .btn{width:100%;padding-inline:.875rem;letter-spacing:.1em}}
 </style>
 </head>
 <body>
@@ -936,14 +937,14 @@ body[data-current="start"] .hero{flex-direction:column;gap:2rem;padding-bottom:2
       <h3>Domain und DNS</h3>
       <p>Für die DNS-Verwaltung der Domain wird Cloudflare genutzt. Die DNS-Einträge sind im Modus „DNS only“ konfiguriert. Cloudflare stellt damit die Namensauflösung bereit; die HTTP-/HTTPS-Aufrufe dieser Website werden nicht über einen Cloudflare-Proxy geleitet. Informationen zur Datenverarbeitung im Zusammenhang mit Cloudflare-Diensten finden Sie in der <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer">Datenschutzerklärung von Cloudflare</a>.</p>
       <h3>3. Cookies, Schriftarten und Bilder</h3>
-      <p>Der eigene Website-Code setzt keine Cookies ein und speichert keine Angaben in Local Storage oder Session Storage. Außer dem in Abschnitt 5 beschriebenen Newsletter-Formular werden keine Analyse-, Werbe- oder Trackingdienste eingebunden. Für das externe Brevo-Formular gelten zusätzlich die Angaben in Abschnitt 5. Die Schriftarten und Bilder werden von derselben Domain wie die Website geladen; beim Laden werden dafür keine Verbindungen zu Google Fonts oder externen Bildanbietern aufgebaut.</p>
+      <p>Der eigene Website-Code setzt keine Cookies ein und speichert keine Angaben in Local Storage oder Session Storage. Es werden keine Analyse-, Werbe- oder Trackingdienste eingebunden. Das Newsletter-Formular übermittelt Daten erst beim Absenden an Brevo; hierzu gelten die Angaben in Abschnitt 5. Die Schriftarten und Bilder werden von derselben Domain wie die Website geladen; beim Laden werden dafür keine Verbindungen zu Google Fonts oder externen Bildanbietern aufgebaut.</p>
       <h3>4. Anfragen per E-Mail</h3>
       <p>Das Anfrageformular öffnet Ihr eigenes E-Mail-Programm mit einem vorbereiteten Nachrichtentext. Es sendet selbst keine Nachricht und übermittelt Ihre Eingaben nicht an einen Formularserver. Erst wenn Sie die E-Mail versenden, erhalte ich die von Ihnen angegebenen Daten, beispielsweise Name, E-Mail-Adresse, Gruppenart, Personenzahl, Sprache und Nachricht.</p>
       <p>Diese Angaben verwende ich zur Bearbeitung Ihrer Anfrage und gegebenenfalls zur Vorbereitung oder Durchführung einer Führung. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO bei vertragsbezogenen Anfragen, ansonsten Art. 6 Abs. 1 lit. f DSGVO aufgrund meines berechtigten Interesses an der Beantwortung Ihrer Nachricht. Die Angaben sind freiwillig; ohne eine Kontaktmöglichkeit kann ich Ihre Anfrage nicht beantworten.</p>
       <p>Das Empfängerpostfach wird bei Gmail betrieben. Google und Ihr eigener E-Mail-Anbieter können die Nachricht und Verbindungsdaten verarbeiten. Dabei können Daten auch außerhalb der EU verarbeitet werden. Informationen zur Verarbeitung und zu internationalen Übermittlungen durch Google finden Sie in der <a href="https://policies.google.com/privacy?hl=de" target="_blank" rel="noopener noreferrer">Datenschutzerklärung von Google</a>.</p>
       <p>Anfragen werden gelöscht, sobald sie nicht mehr für die Bearbeitung benötigt werden. Soweit gesetzliche Aufbewahrungspflichten bestehen oder Daten zur Geltendmachung, Ausübung oder Verteidigung von Rechtsansprüchen erforderlich sind, werden sie für die entsprechende Dauer aufbewahrt.</p>
       <h3>5. Newsletter mit Brevo</h3>
-      <p>Für die Anmeldung und den Versand des Newsletters nutze ich Brevo. Das eingebettete Anmeldeformular wird erst geladen, wenn Sie die Newsletter-Seite öffnen. Dabei wird eine Verbindung zu sibforms.com hergestellt; Brevo erhält technische Verbindungsdaten wie Ihre IP-Adresse und Browserinformationen. Welche technischen Speichermechanismen der Anbieter verwendet, richtet sich nach dessen Dienst und Einstellungen.</p>
+      <p>Für die Anmeldung und den Versand des Newsletters nutze ich Brevo. Das Anmeldeformular ist direkt in diese Website integriert und lädt beim bloßen Öffnen der Newsletter-Seite keine externen Brevo-Skripte oder Formulare. Erst wenn Sie das Formular absenden, werden die Formulardaten an sibforms.com übermittelt. Die Rückmeldung von Brevo öffnet sich in einem neuen Tab. Dabei erhält Brevo auch technische Verbindungsdaten wie Ihre IP-Adresse und Browserinformationen. Für die anschließend aufgerufene Brevo-Seite gelten die technischen Speichermechanismen und Datenschutzinformationen des Anbieters.</p>
       <p>Wenn Sie den Newsletter abonnieren, werden Ihre im Formular angegebenen Daten, insbesondere Ihre E-Mail-Adresse, an Brevo übermittelt und zur Verwaltung der Anmeldung sowie zum Versand von Informationen über Museumsführungen und Neuigkeiten verarbeitet. Rechtsgrundlage für den Newsletter-Versand ist Ihre Einwilligung gemäß Art. 6 Abs. 1 lit. a DSGVO. Das Formular versendet keine Anmeldung über Ihr eigenes E-Mail-Programm.</p>
       <p>Sie können Ihre Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen, insbesondere über den Abmeldelink in jeder Newsletter-E-Mail oder per E-Mail an <a class="email-contact" href="#kontakt-email">silvia.artstories<span aria-hidden="true">&#64;</span><span class="sr-only">@</span>gmail.com</a>. Die Rechtmäßigkeit der bisherigen Verarbeitung bleibt unberührt. Nach der Abmeldung werden Ihre Daten nicht mehr für den Newsletter-Versand verwendet. Soweit Nachweise über die Einwilligung oder die Abmeldung zur Erfüllung rechtlicher Pflichten oder zur Verteidigung von Rechtsansprüchen erforderlich sind, können diese zweckgebunden weiter aufbewahrt werden.</p>
       <p>Weitere Informationen zu Brevo, seinen Unterauftragnehmern, Speicherdauern und internationalen Datenübermittlungen finden Sie in der <a href="https://www.brevo.com/legal/privacypolicy/" target="_blank" rel="noopener noreferrer">Datenschutzerklärung von Brevo</a>.</p>
@@ -959,13 +960,19 @@ body[data-current="start"] .hero{flex-direction:column;gap:2rem;padding-bottom:2
     </div>
   </section>
 
-  <section id="newsletter" class="news news-brevo" data-page="newsletter" aria-label="Newsletter">
-    <div class="brevo-embed">
-      <iframe id="brevoNewsletter" title="Newsletter-Anmeldung — Brevo" width="540" height="520" data-src="https://1979ac13.sibforms.com/v2/serve/MUIFAOh9GwNlPi3Ug3WPN3wpVP0Flk87URZF_rCUpjwALq0KiP6VBv6zgufI4KpOk0HcoD6aqyLBhMY45DvSw5Cn_ilVxA25Aayp_wVbaQ2eyEMYErNRE8d7IPmTu85COXhRxU9TgQ6vs_E0IcbY0Gdulp3b96a_gP09lQ2YaqDyOu5iNP7vd5pjOlXVPh3rXXmebPHiMGWW0Lc9hg==" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" scrolling="auto" allowfullscreen></iframe>
-      <p class="note brevo-note" data-i18n="brevoNote">Die Anmeldung erfolgt direkt über Brevo. Sie können sich jederzeit über den Link in jeder Newsletter-E-Mail abmelden.</p>
+  <section id="newsletter" class="news news-native" data-page="newsletter" aria-labelledby="newsTitle">
+    <p class="eyebrow" data-i18n="nEy">Newsletter</p>
+    <h2 id="newsTitle">In <em>Kontakt</em> bleiben</h2>
+    <p class="sub" style="margin:0 auto" data-i18n="nSub">Geschichten aus den Museen, neue Perspektiven und Ideen für Ihre nächste private Führung. Wenige E-Mails, mit Sorgfalt geschrieben.</p>
+    <form id="news" action="https://1979ac13.sibforms.com/v2/serve/MUIFAOh9GwNlPi3Ug3WPN3wpVP0Flk87URZF_rCUpjwALq0KiP6VBv6zgufI4KpOk0HcoD6aqyLBhMY45DvSw5Cn_ilVxA25Aayp_wVbaQ2eyEMYErNRE8d7IPmTu85COXhRxU9TgQ6vs_E0IcbY0Gdulp3b96a_gP09lQ2YaqDyOu5iNP7vd5pjOlXVPh3rXXmebPHiMGWW0Lc9hg==" method="POST" target="_blank" rel="noopener noreferrer" aria-describedby="newsletterNote">
+      <label class="sr-only" for="newsEmail" data-i18n="emailLabel">E-Mail</label>
+      <input type="email" name="EMAIL" id="newsEmail" required placeholder="Ihre E-Mail-Adresse" autocomplete="email" inputmode="email">
+      <div class="newsletter-trap" aria-hidden="true"><label for="newsletterTrap">Leave this field empty</label><input type="text" name="email_address_check" id="newsletterTrap" value="" tabindex="-1" autocomplete="off"></div>
+      <input type="hidden" name="locale" id="newsletterLocale" value="de">
+      <button class="btn" type="submit" data-i18n="newsletterSubscribe">Newsletter abonnieren</button>
+      <p class="note" id="newsletterNote" data-i18n="newsletterSubmitNote">Die Bestätigung oder Rückmeldung von Brevo öffnet sich in einem neuen Tab. Sie können sich jederzeit wieder abmelden.</p>
       <p class="note form-privacy"><span data-i18n="privacyForm">Informationen zur Verarbeitung Ihrer Angaben:</span> <a href="#datenschutz" data-i18n="privacyLink">Datenschutzerklärung</a></p>
-      <p class="note"><a href="https://1979ac13.sibforms.com/v2/serve/MUIFAOh9GwNlPi3Ug3WPN3wpVP0Flk87URZF_rCUpjwALq0KiP6VBv6zgufI4KpOk0HcoD6aqyLBhMY45DvSw5Cn_ilVxA25Aayp_wVbaQ2eyEMYErNRE8d7IPmTu85COXhRxU9TgQ6vs_E0IcbY0Gdulp3b96a_gP09lQ2YaqDyOu5iNP7vd5pjOlXVPh3rXXmebPHiMGWW0Lc9hg==" target="_blank" rel="noopener noreferrer" data-i18n="brevoOpen">Formular in einem neuen Tab öffnen ↗</a></p>
-    </div>
+    </form>
   </section>
 
   <section id="ueber-mich" class="about" data-page="ueber-mich">
@@ -1301,9 +1308,8 @@ document.getElementById("anfrage").addEventListener("submit", function(e){
 // 5 Staatliche Antikensammlungen; 6 Sammlung Schack; 7 Museum für Abgüsse Klassischer Bildwerke München.
 var I18N = {
   "de": {
-    "brevoTitle": "Newsletter-Anmeldung — Brevo",
-    "brevoNote": "Die Anmeldung erfolgt direkt über Brevo. Sie können sich jederzeit über den Link in jeder Newsletter-E-Mail abmelden.",
-    "brevoOpen": "Formular in einem neuen Tab öffnen ↗",
+    "newsletterSubscribe": "Newsletter abonnieren",
+    "newsletterSubmitNote": "Die Bestätigung oder Rückmeldung von Brevo öffnet sich in einem neuen Tab. Sie können sich jederzeit wieder abmelden.",
     "galleryAlt1": "Museumsführung vor einem Gemälde mit Kindern und Erwachsenen",
     "galleryAlt2": "Silvia Amadori erläutert antike Skulpturen vor einer Gruppe",
     "galleryAlt3": "Silvia Amadori führt eine Gruppe durch eine Gemäldegalerie",
@@ -1472,9 +1478,8 @@ var I18N = {
     "languageSwitcherLabel": "Sprache auswählen"
   },
   "it": {
-    "brevoTitle": "Iscrizione alla newsletter — Brevo",
-    "brevoNote": "L’iscrizione avviene direttamente tramite Brevo. Puoi annullarla in qualsiasi momento tramite il link presente in ogni newsletter.",
-    "brevoOpen": "Apri il modulo in una nuova scheda ↗",
+    "newsletterSubscribe": "Iscriviti alla newsletter",
+    "newsletterSubmitNote": "La conferma o la risposta di Brevo si apre in una nuova scheda. Puoi annullare l’iscrizione in qualsiasi momento.",
     "galleryAlt1": "Visita al museo davanti a un dipinto con bambini e adulti",
     "galleryAlt2": "Silvia Amadori illustra sculture antiche a un gruppo",
     "galleryAlt3": "Silvia Amadori accompagna un gruppo in una pinacoteca",
@@ -1643,9 +1648,8 @@ var I18N = {
     "languageSwitcherLabel": "Seleziona la lingua"
   },
   "en": {
-    "brevoTitle": "Newsletter subscription — Brevo",
-    "brevoNote": "Subscribe directly through Brevo. You can unsubscribe at any time using the link in each newsletter email.",
-    "brevoOpen": "Open the form in a new tab ↗",
+    "newsletterSubscribe": "Subscribe to the newsletter",
+    "newsletterSubmitNote": "Brevo’s confirmation or response opens in a new tab. You can unsubscribe at any time.",
     "galleryAlt1": "Museum tour in front of a painting with children and adults",
     "galleryAlt2": "Silvia Amadori discusses ancient sculptures with a group",
     "galleryAlt3": "Silvia Amadori guides a group through a painting gallery",
@@ -1833,7 +1837,9 @@ function applyLang(lang){
   document.querySelectorAll("[data-i18n-placeholder]").forEach(function(el){el.placeholder=t[el.getAttribute("data-i18n-placeholder")];});
   document.querySelectorAll("[data-i18n-alt]").forEach(function(el){el.alt=t[el.dataset.i18nAlt];});
   syncTourPicker();
-  document.getElementById("brevoNewsletter").title=t.brevoTitle;
+  document.getElementById("newsTitle").innerHTML=t.nH+"<em>"+t.nHem+"</em>"+t.nHrest;
+  document.getElementById("newsEmail").placeholder=t.emailPh;
+  document.getElementById("newsletterLocale").value=lang;
   document.documentElement.lang = lang;
   document.querySelectorAll(".langsw button").forEach(function(b){b.classList.toggle("on", b.dataset.lang===lang);b.setAttribute("aria-pressed",b.dataset.lang===lang?"true":"false")});
 }
@@ -1883,10 +1889,6 @@ function route(){
   var p=PAGE_OF[h]||"start";
   if(h==="anfrage")selectTourFromHash(rawHash);
   document.body.setAttribute("data-current",p);
-  if(p==="newsletter"){
-    var newsletterFrame=document.getElementById("brevoNewsletter");
-    if(!newsletterFrame.hasAttribute("src"))newsletterFrame.src=newsletterFrame.dataset.src;
-  }
   document.querySelectorAll("[data-page]").forEach(function(el){
     var pg=el.getAttribute("data-page");
     el.hidden=!(pg===p||(pg==="booking"&&(p==="start"||p==="anfrage"))||(pg==="sub"&&p!=="start"));
@@ -2069,7 +2071,12 @@ window.addEventListener("hashchange",function(){if(lb.classList.contains("open")
   var second=first.cloneNode(true);second.setAttribute("aria-hidden","true");
   [].forEach.call(second.querySelectorAll(".ph"),function(photo,index){photo.removeAttribute("role");photo.tabIndex=-1;photo.addEventListener("click",function(){cards[index].querySelector(".ph").click();});});
   track.appendChild(second);strip.appendChild(track);
-  var offset=0,cycle=0,last=null,reduce=window.matchMedia("(prefers-reduced-motion: reduce)");
+  var offset=0,cycle=0,last=null,ready=false,reduce=window.matchMedia("(prefers-reduced-motion: reduce)");
+  // Moving thumbnails must load before they scroll into view; native lazy loading
+  // is unreliable for the off-screen copies in an animated track.
+  var photos=[].slice.call(track.querySelectorAll("img"));
+  photos.forEach(function(photo){photo.loading="eager";});
+  Promise.allSettled(photos.map(function(photo){return photo.decode?photo.decode():Promise.resolve();})).then(function(){ready=true;measure();});
   function measure(){
     if(!strip.clientWidth)return;
     strip.style.setProperty("--gallery-viewport",strip.clientWidth+"px");
@@ -2080,7 +2087,7 @@ window.addEventListener("hashchange",function(){if(lb.classList.contains("open")
   function animate(time){
     if(last===null)last=time;
     var elapsed=Math.min(time-last,100)/1000;last=time;
-    if(document.body.getAttribute("data-current")==="start"&&document.visibilityState==="visible"&&cycle>0&&!reduce.matches&&!strip.matches(":hover")&&!strip.contains(document.activeElement)){
+    if(document.body.getAttribute("data-current")==="start"&&document.visibilityState==="visible"&&cycle>0&&ready&&!reduce.matches&&!strip.matches(":hover")&&!strip.contains(document.activeElement)){
       offset=(offset+40*elapsed)%cycle;
       track.style.transform="translate3d("+(-offset)+"px,0,0)";
     }
