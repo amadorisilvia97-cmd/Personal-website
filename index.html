@@ -730,6 +730,18 @@ body[data-current="start"] .hero{flex-direction:column;gap:2rem;padding-bottom:2
 .news-native .form-privacy{margin-top:.625rem}
 .newsletter-trap{position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden}
 @media(max-width:600px){.news-native form{padding-inline:1.125rem}.news-native .btn{width:100%;padding-inline:.875rem;letter-spacing:.1em}}
+
+/* Newsletter confirmation shares the site's serif type and restrained palette. */
+.newsletter-result{max-width:34rem;margin:2rem auto 0;padding:1.5rem 1.5rem 0;text-align:center;outline:none}
+.newsletter-result-mark{display:block;color:var(--accent);font-size:1.625rem;margin-bottom:1rem}
+.newsletter-result h3{font-family:var(--serif);font-size:clamp(2rem,5vw,2.75rem);font-weight:400;font-style:italic;color:var(--accent);margin:0 0 .75rem;line-height:1.15}
+.newsletter-result p{margin:.5rem 0;font-size:1.0625rem}
+.newsletter-result .note{color:var(--muted);font-size:.875rem;line-height:1.65;max-width:42ch;margin:1rem auto 0}
+.newsletter-home{display:inline-block;margin-top:1.5rem;min-height:2.75rem;color:var(--accent);font-size:.875rem;text-underline-offset:4px}
+.newsletter-feedback,.newsletter-fallback{max-width:28.75rem;margin:1rem auto 0;padding-inline:1.125rem;font-size:.875rem;line-height:1.65}
+.newsletter-feedback{color:var(--ink)}
+.newsletter-fallback a{color:var(--accent);text-underline-offset:3px}
+#newsletterSubmit:disabled{opacity:.65;cursor:wait}
 </style>
 </head>
 <body>
@@ -944,7 +956,7 @@ body[data-current="start"] .hero{flex-direction:column;gap:2rem;padding-bottom:2
       <p>Das Empfängerpostfach wird bei Gmail betrieben. Google und Ihr eigener E-Mail-Anbieter können die Nachricht und Verbindungsdaten verarbeiten. Dabei können Daten auch außerhalb der EU verarbeitet werden. Informationen zur Verarbeitung und zu internationalen Übermittlungen durch Google finden Sie in der <a href="https://policies.google.com/privacy?hl=de" target="_blank" rel="noopener noreferrer">Datenschutzerklärung von Google</a>.</p>
       <p>Anfragen werden gelöscht, sobald sie nicht mehr für die Bearbeitung benötigt werden. Soweit gesetzliche Aufbewahrungspflichten bestehen oder Daten zur Geltendmachung, Ausübung oder Verteidigung von Rechtsansprüchen erforderlich sind, werden sie für die entsprechende Dauer aufbewahrt.</p>
       <h3>5. Newsletter mit Brevo</h3>
-      <p>Für die Anmeldung und den Versand des Newsletters nutze ich Brevo. Das Anmeldeformular ist direkt in diese Website integriert und lädt beim bloßen Öffnen der Newsletter-Seite keine externen Brevo-Skripte oder Formulare. Erst wenn Sie das Formular absenden, werden die Formulardaten an sibforms.com übermittelt. Die Rückmeldung von Brevo öffnet sich in einem neuen Tab. Dabei erhält Brevo auch technische Verbindungsdaten wie Ihre IP-Adresse und Browserinformationen. Für die anschließend aufgerufene Brevo-Seite gelten die technischen Speichermechanismen und Datenschutzinformationen des Anbieters.</p>
+      <p>Für die Anmeldung und den Versand des Newsletters nutze ich Brevo. Das Anmeldeformular ist direkt in diese Website integriert und lädt beim bloßen Öffnen der Newsletter-Seite keine externen Brevo-Skripte oder Formulare. Erst wenn Sie das Formular absenden, werden die Formulardaten an sibforms.com übermittelt. Die Rückmeldung wird auf dieser Website angezeigt. Falls die technische Rückmeldung nicht geprüft werden kann, können Sie das Formular über einen gesonderten Link direkt bei Brevo öffnen. Dabei erhält Brevo auch technische Verbindungsdaten wie Ihre IP-Adresse und Browserinformationen. Für die anschließend aufgerufene Brevo-Seite gelten die technischen Speichermechanismen und Datenschutzinformationen des Anbieters.</p>
       <p>Wenn Sie den Newsletter abonnieren, werden Ihre im Formular angegebenen Daten, insbesondere Ihre E-Mail-Adresse, an Brevo übermittelt und zur Verwaltung der Anmeldung sowie zum Versand von Informationen über Museumsführungen und Neuigkeiten verarbeitet. Rechtsgrundlage für den Newsletter-Versand ist Ihre Einwilligung gemäß Art. 6 Abs. 1 lit. a DSGVO. Das Formular versendet keine Anmeldung über Ihr eigenes E-Mail-Programm.</p>
       <p>Sie können Ihre Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen, insbesondere über den Abmeldelink in jeder Newsletter-E-Mail oder per E-Mail an <a class="email-contact" href="#kontakt-email">silvia.artstories<span aria-hidden="true">&#64;</span><span class="sr-only">@</span>gmail.com</a>. Die Rechtmäßigkeit der bisherigen Verarbeitung bleibt unberührt. Nach der Abmeldung werden Ihre Daten nicht mehr für den Newsletter-Versand verwendet. Soweit Nachweise über die Einwilligung oder die Abmeldung zur Erfüllung rechtlicher Pflichten oder zur Verteidigung von Rechtsansprüchen erforderlich sind, können diese zweckgebunden weiter aufbewahrt werden.</p>
       <p>Weitere Informationen zu Brevo, seinen Unterauftragnehmern, Speicherdauern und internationalen Datenübermittlungen finden Sie in der <a href="https://www.brevo.com/legal/privacypolicy/" target="_blank" rel="noopener noreferrer">Datenschutzerklärung von Brevo</a>.</p>
@@ -964,15 +976,24 @@ body[data-current="start"] .hero{flex-direction:column;gap:2rem;padding-bottom:2
     <p class="eyebrow" data-i18n="nEy">Newsletter</p>
     <h2 id="newsTitle">In <em>Kontakt</em> bleiben</h2>
     <p class="sub" style="margin:0 auto" data-i18n="nSub">Geschichten aus den Museen, neue Perspektiven und Ideen für Ihre nächste private Führung. Wenige E-Mails, mit Sorgfalt geschrieben.</p>
-    <form id="news" action="https://1979ac13.sibforms.com/v2/serve/MUIFAOh9GwNlPi3Ug3WPN3wpVP0Flk87URZF_rCUpjwALq0KiP6VBv6zgufI4KpOk0HcoD6aqyLBhMY45DvSw5Cn_ilVxA25Aayp_wVbaQ2eyEMYErNRE8d7IPmTu85COXhRxU9TgQ6vs_E0IcbY0Gdulp3b96a_gP09lQ2YaqDyOu5iNP7vd5pjOlXVPh3rXXmebPHiMGWW0Lc9hg==" method="POST" target="_blank" rel="noopener noreferrer" aria-describedby="newsletterNote">
+    <form id="news" action="https://1979ac13.sibforms.com/v2/serve/MUIFAOh9GwNlPi3Ug3WPN3wpVP0Flk87URZF_rCUpjwALq0KiP6VBv6zgufI4KpOk0HcoD6aqyLBhMY45DvSw5Cn_ilVxA25Aayp_wVbaQ2eyEMYErNRE8d7IPmTu85COXhRxU9TgQ6vs_E0IcbY0Gdulp3b96a_gP09lQ2YaqDyOu5iNP7vd5pjOlXVPh3rXXmebPHiMGWW0Lc9hg==" method="POST" aria-describedby="newsletterNote">
       <label class="sr-only" for="newsEmail" data-i18n="emailLabel">E-Mail</label>
       <input type="email" name="EMAIL" id="newsEmail" required placeholder="Ihre E-Mail-Adresse" autocomplete="email" inputmode="email">
       <div class="newsletter-trap" aria-hidden="true"><label for="newsletterTrap">Leave this field empty</label><input type="text" name="email_address_check" id="newsletterTrap" value="" tabindex="-1" autocomplete="off"></div>
       <input type="hidden" name="locale" id="newsletterLocale" value="de">
-      <button class="btn" type="submit" data-i18n="newsletterSubscribe">Newsletter abonnieren</button>
-      <p class="note" id="newsletterNote" data-i18n="newsletterSubmitNote">Die Bestätigung oder Rückmeldung von Brevo öffnet sich in einem neuen Tab. Sie können sich jederzeit wieder abmelden.</p>
+      <button class="btn" id="newsletterSubmit" type="submit" data-i18n="newsletterSubscribe">Newsletter abonnieren</button>
+      <p class="note" id="newsletterNote" data-i18n="newsletterSubmitNote">Die Anmeldung erfolgt direkt hier. Sie können sich jederzeit wieder abmelden.</p>
       <p class="note form-privacy"><span data-i18n="privacyForm">Informationen zur Verarbeitung Ihrer Angaben:</span> <a href="#datenschutz" data-i18n="privacyLink">Datenschutzerklärung</a></p>
     </form>
+    <div id="newsletterResult" class="newsletter-result" hidden tabindex="-1" role="region" aria-labelledby="newsletterResultTitle">
+      <span class="newsletter-result-mark" aria-hidden="true">✓</span>
+      <h3 id="newsletterResultTitle" data-i18n="newsletterSuccessTitle">Vielen Dank!</h3>
+      <p data-i18n="newsletterSuccessText">Ihre Newsletter-Anmeldung ist eingegangen.</p>
+      <p class="note" data-i18n="newsletterSuccessHint">Falls Sie eine Bestätigungs-E-Mail erhalten, folgen Sie bitte dem Link darin, um die Anmeldung abzuschließen.</p>
+      <a class="newsletter-home" href="#top" data-i18n="newsletterHome">Zur Startseite ↗</a>
+    </div>
+    <div id="newsletterFeedback" class="newsletter-feedback" hidden role="status" aria-live="polite" aria-atomic="true"></div>
+    <p id="newsletterFallback" class="note newsletter-fallback" hidden><a href="https://1979ac13.sibforms.com/v2/serve/MUIFAOh9GwNlPi3Ug3WPN3wpVP0Flk87URZF_rCUpjwALq0KiP6VBv6zgufI4KpOk0HcoD6aqyLBhMY45DvSw5Cn_ilVxA25Aayp_wVbaQ2eyEMYErNRE8d7IPmTu85COXhRxU9TgQ6vs_E0IcbY0Gdulp3b96a_gP09lQ2YaqDyOu5iNP7vd5pjOlXVPh3rXXmebPHiMGWW0Lc9hg==" target="_blank" rel="noopener noreferrer" data-i18n="newsletterFallback">Formular direkt bei Brevo öffnen ↗</a></p>
   </section>
 
   <section id="ueber-mich" class="about" data-page="ueber-mich">
@@ -1015,29 +1036,57 @@ var TOUR_CATALOGUE = {
   "museums": [
     {
       "id": "alte",
-      "title": "Alte Pinakothek"
+      "title": "Alte Pinakothek",
+      "bookingTitles": {
+        "en": "Alte Pinakothek",
+        "it": "Alte Pinakothek"
+      }
     },
     {
       "id": "neue",
       "title": "Neue Pinakothek",
       "note": "Die Neue Pinakothek ist wegen Sanierung geschlossen. Ausgewählte Werke sind in der Alten Pinakothek und der Sammlung Schack zu sehen. Den tatsächlichen Besuchsort und die ausgestellten Werke klären wir vor der Führung; die Abbildungen sind Themenbeispiele.",
-      "source": "https://www.pinakothek.de/de/ausstellung/von-turner-bis-van-gogh"
+      "source": "https://www.pinakothek.de/de/ausstellung/von-turner-bis-van-gogh",
+      "bookingTitles": {
+        "en": "Neue Pinakothek",
+        "it": "Neue Pinakothek"
+      },
+      "bookingNotes": {
+        "en": "The Neue Pinakothek is closed for renovation. Selected works are on display at the Alte Pinakothek and the Schack Collection. We will confirm the actual venue and works on display before your tour; the images illustrate the themes.",
+        "it": "La Neue Pinakothek è chiusa per lavori di ristrutturazione. Alcune opere sono esposte all’Alte Pinakothek e nella Collezione Schack. Prima della visita concorderemo la sede effettiva e verificheremo le opere esposte; le immagini illustrano i temi."
+      }
     },
     {
       "id": "glypto",
-      "title": "Glyptothek"
+      "title": "Glyptothek",
+      "bookingTitles": {
+        "en": "Glyptothek",
+        "it": "Glyptothek"
+      }
     },
     {
       "id": "antike",
-      "title": "Staatliche Antikensammlungen"
+      "title": "Staatliche Antikensammlungen",
+      "bookingTitles": {
+        "en": "State Collections of Antiquities",
+        "it": "Collezioni Statali di Antichità"
+      }
     },
     {
       "id": "abguss",
-      "title": "Museum für Abgüsse Klassischer Bildwerke München"
+      "title": "Museum für Abgüsse Klassischer Bildwerke München",
+      "bookingTitles": {
+        "en": "Museum of Casts of Classical Sculptures, Munich",
+        "it": "Museo dei calchi di sculture classiche di Monaco"
+      }
     },
     {
       "id": "schack",
-      "title": "Sammlung Schack"
+      "title": "Sammlung Schack",
+      "bookingTitles": {
+        "en": "Schack Collection",
+        "it": "Collezione Schack"
+      }
     }
   ],
   "tours": [
@@ -1053,6 +1102,10 @@ var TOUR_CATALOGUE = {
         "source": "https://commons.wikimedia.org/wiki/File:Tempi_Madonna_-_Raphael.jpg",
         "license": "Public domain",
         "licenseURL": "https://creativecommons.org/publicdomain/mark/1.0/"
+      },
+      "bookingTitles": {
+        "en": "Highlights of the Alte Pinakothek",
+        "it": "I capolavori dell’Alte Pinakothek"
       }
     },
     {
@@ -1067,6 +1120,10 @@ var TOUR_CATALOGUE = {
         "source": "https://www.sammlung.pinakothek.de/de/artwork/Y0GRkKX4RX",
         "license": "CC BY-SA 4.0",
         "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "bookingTitles": {
+        "en": "Rubens in the Alte Pinakothek",
+        "it": "Rubens all’Alte Pinakothek"
       }
     },
     {
@@ -1081,6 +1138,10 @@ var TOUR_CATALOGUE = {
         "source": "https://commons.wikimedia.org/wiki/File:Albrecht_D%C3%BCrer_-_1500_self-portrait_(High_resolution_and_detail).jpg",
         "license": "Public domain",
         "licenseURL": "https://creativecommons.org/publicdomain/mark/1.0/"
+      },
+      "bookingTitles": {
+        "en": "More than just faces – Portraits in the Alte Pinakothek",
+        "it": "Più che semplici volti – I ritratti dell’Alte Pinakothek"
       }
     },
     {
@@ -1095,6 +1156,10 @@ var TOUR_CATALOGUE = {
         "source": "https://commons.wikimedia.org/wiki/File:Caspar_David_Friedrich_-_Riesengebirge_Landscape_with_Rising_Fog_-_WGA8257.jpg",
         "license": "Public domain",
         "licenseURL": "https://creativecommons.org/publicdomain/mark/1.0/"
+      },
+      "bookingTitles": {
+        "en": "The development of landscape painting in the Neue Pinakothek",
+        "it": "L’evoluzione della pittura di paesaggio nella Neue Pinakothek"
       }
     },
     {
@@ -1109,6 +1174,10 @@ var TOUR_CATALOGUE = {
         "source": "https://www.sammlung.pinakothek.de/de/artwork/Y0GR9B7LRX",
         "license": "CC BY-SA 4.0",
         "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "bookingTitles": {
+        "en": "Post-Impressionism in the Neue Pinakothek",
+        "it": "Il postimpressionismo nella Neue Pinakothek"
       }
     },
     {
@@ -1123,6 +1192,10 @@ var TOUR_CATALOGUE = {
         "source": "https://commons.wikimedia.org/wiki/File:Munich_-_Two_young_women_drawing_-_5814.jpg",
         "license": "CC BY-SA 3.0",
         "licenseURL": "https://creativecommons.org/licenses/by-sa/3.0"
+      },
+      "bookingTitles": {
+        "en": "Highlights of the Glyptothek",
+        "it": "I capolavori della Glyptothek"
       }
     },
     {
@@ -1137,6 +1210,10 @@ var TOUR_CATALOGUE = {
         "source": "https://commons.wikimedia.org/wiki/File:Seilenos_-_221_-_Glyptothek_Munich_-_DSC07361.jpg",
         "license": "CC0",
         "licenseURL": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+      },
+      "bookingTitles": {
+        "en": "Body & Beauty. The Allure of the Body in Ancient Sculpture",
+        "it": "Body & Beauty. Il fascino del corpo nella scultura antica"
       }
     },
     {
@@ -1151,6 +1228,10 @@ var TOUR_CATALOGUE = {
         "source": "https://commons.wikimedia.org/wiki/File:Kouros_of_Tenea_-_168_-_Glyptothek_Munich_-_DSC07368a.jpg",
         "license": "CC0",
         "licenseURL": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+      },
+      "bookingTitles": {
+        "en": "The history of sculpture in the Glyptothek",
+        "it": "La storia della scultura nella Glyptothek"
       }
     },
     {
@@ -1165,6 +1246,10 @@ var TOUR_CATALOGUE = {
         "source": "https://commons.wikimedia.org/wiki/File:Exekias_Dionysos_white.jpg",
         "license": "Public domain",
         "licenseURL": "https://creativecommons.org/publicdomain/mark/1.0/"
+      },
+      "bookingTitles": {
+        "en": "Highlights of the State Collections of Antiquities",
+        "it": "I capolavori delle Collezioni Statali di Antichità"
       }
     },
     {
@@ -1179,6 +1264,10 @@ var TOUR_CATALOGUE = {
         "source": "https://commons.wikimedia.org/wiki/File:Apollo_west_pediment_Olympia_copy_MFA_Munich.jpg",
         "license": "Public domain",
         "licenseURL": "https://creativecommons.org/publicdomain/mark/1.0/"
+      },
+      "bookingTitles": {
+        "en": "Highlights of the Museum of Casts of Classical Sculptures",
+        "it": "I capolavori del Museo dei calchi di sculture classiche"
       }
     },
     {
@@ -1193,6 +1282,10 @@ var TOUR_CATALOGUE = {
         "source": "https://commons.wikimedia.org/wiki/File:Moritz_von_Schwind_-_Morgenstunde_-_1858.jpeg",
         "license": "Public domain",
         "licenseURL": "https://creativecommons.org/publicdomain/mark/1.0/"
+      },
+      "bookingTitles": {
+        "en": "Masterpieces of the Schack Collection",
+        "it": "I capolavori della Collezione Schack"
       }
     },
     {
@@ -1207,6 +1300,10 @@ var TOUR_CATALOGUE = {
         "source": "https://commons.wikimedia.org/wiki/File:Carl-spitzweg-spanisches-staendchen.jpg",
         "license": "Public domain",
         "licenseURL": "https://creativecommons.org/publicdomain/mark/1.0/"
+      },
+      "bookingTitles": {
+        "en": "Karl Spitzweg in the Schack Collection",
+        "it": "Karl Spitzweg nella Collezione Schack"
       }
     }
   ]
@@ -1218,7 +1315,7 @@ function initializeTours(){
     var heading=document.createElement("h3");heading.textContent=museum.title;group.appendChild(heading);
     if(museum.note){var note=document.createElement("p");note.className="tour-location-note";note.textContent=museum.note;group.appendChild(note);}
     var grid=document.createElement("div");grid.className="tour-items";group.appendChild(grid);
-    var optgroup=document.createElement("optgroup");optgroup.label=museum.title;
+    var optgroup=document.createElement("optgroup");optgroup.label=museum.title;optgroup.dataset.museum=museum.id;
     TOUR_CATALOGUE.tours.filter(function(tour){return tour.museum===museum.id;}).forEach(function(tour){
       var card=document.createElement("article");card.className="tour-entry";card.lang="de";
       var frame=document.createElement("figure");frame.className="tour-artwork";
@@ -1254,7 +1351,7 @@ function initializeTourPicker(){
   panel.appendChild(optionNode(select.options[0]));
   [].forEach.call(select.querySelectorAll("optgroup"),function(group,index){
     var wrapper=document.createElement("div");wrapper.className="tour-picker-group";wrapper.setAttribute("role","group");wrapper.setAttribute("aria-labelledby","tour-picker-group-"+index);
-    var heading=document.createElement("div");heading.className="tour-picker-heading";heading.id="tour-picker-group-"+index;heading.textContent=group.label;wrapper.appendChild(heading);
+    var heading=document.createElement("div");heading.className="tour-picker-heading";heading.dataset.museum=group.dataset.museum;heading.id="tour-picker-group-"+index;heading.textContent=group.label;wrapper.appendChild(heading);
     [].forEach.call(group.children,function(option){wrapper.appendChild(optionNode(option));});panel.appendChild(wrapper);
   });
   function open(){panel.hidden=false;toggle.setAttribute("aria-expanded","true");var current=panel.querySelector('[aria-selected="true"]')||panel.querySelector("button");if(current)current.focus();}
@@ -1273,11 +1370,28 @@ function initializeTourPicker(){
   select.addEventListener("change",syncTourPicker);syncTourPicker();
 }
 
-function updateTourNote(){
+function updateBookingLanguage(lang){
+  var select=document.getElementById("tourChoice");
+  function bookingTitle(item){return item.bookingTitles&&item.bookingTitles[lang]||item.title;}
+  TOUR_CATALOGUE.tours.forEach(function(tour){
+    var option=[].find.call(select.options,function(item){return item.value===tour.id;});
+    if(option)option.textContent=bookingTitle(tour);
+  });
+  TOUR_CATALOGUE.museums.forEach(function(museum){
+    var group=select.querySelector('optgroup[data-museum="'+museum.id+'"]');
+    if(group)group.label=bookingTitle(museum);
+    var heading=document.querySelector('.tour-picker-heading[data-museum="'+museum.id+'"]');
+    if(heading)heading.textContent=bookingTitle(museum);
+  });
+  updateTourNote(lang);
+}
+
+function updateTourNote(lang){
+  var language=typeof lang==="string"?lang:(document.documentElement.lang||"de");
   var select=document.getElementById("tourChoice"),note=document.getElementById("selectedTourNote");
   var tour=TOUR_CATALOGUE.tours.find(function(t){return t.id===select.value;});
   var museum=tour&&TOUR_CATALOGUE.museums.find(function(m){return m.id===tour.museum;});
-  note.textContent=museum&&museum.note?museum.note:"";note.hidden=!note.textContent;
+  note.textContent=museum&&museum.note?(museum.bookingNotes&&museum.bookingNotes[language]||museum.note):"";note.hidden=!note.textContent;
   syncTourPicker();
 }
 function selectTourFromHash(raw){
@@ -1308,8 +1422,16 @@ document.getElementById("anfrage").addEventListener("submit", function(e){
 // 5 Staatliche Antikensammlungen; 6 Sammlung Schack; 7 Museum für Abgüsse Klassischer Bildwerke München.
 var I18N = {
   "de": {
+    "newsletterSubmitNote": "Die Anmeldung erfolgt direkt hier. Sie können sich jederzeit wieder abmelden.",
+    "newsletterSending": "Wird gesendet …",
+    "newsletterSuccessTitle": "Vielen Dank!",
+    "newsletterSuccessText": "Ihre Newsletter-Anmeldung ist eingegangen.",
+    "newsletterSuccessHint": "Falls Sie eine Bestätigungs-E-Mail erhalten, folgen Sie bitte dem Link darin, um die Anmeldung abzuschließen.",
+    "newsletterHome": "Zur Startseite ↗",
+    "newsletterError": "Die Anmeldung wurde nicht bestätigt. Bitte prüfen Sie Ihre E-Mail-Adresse und versuchen Sie es erneut.",
+    "newsletterUncertain": "Die Rückmeldung konnte nicht geprüft werden. Ihre Anmeldung könnte bereits eingegangen sein. Prüfen Sie bitte zuerst Ihr E-Mail-Postfach, bevor Sie es erneut versuchen.",
+    "newsletterFallback": "Formular direkt bei Brevo öffnen ↗",
     "newsletterSubscribe": "Newsletter abonnieren",
-    "newsletterSubmitNote": "Die Bestätigung oder Rückmeldung von Brevo öffnet sich in einem neuen Tab. Sie können sich jederzeit wieder abmelden.",
     "galleryAlt1": "Museumsführung vor einem Gemälde mit Kindern und Erwachsenen",
     "galleryAlt2": "Silvia Amadori erläutert antike Skulpturen vor einer Gruppe",
     "galleryAlt3": "Silvia Amadori führt eine Gruppe durch eine Gemäldegalerie",
@@ -1478,8 +1600,16 @@ var I18N = {
     "languageSwitcherLabel": "Sprache auswählen"
   },
   "it": {
+    "newsletterSubmitNote": "Iscriviti qui, senza lasciare il sito. Puoi annullare l’iscrizione in qualsiasi momento.",
+    "newsletterSending": "Invio in corso …",
+    "newsletterSuccessTitle": "Grazie!",
+    "newsletterSuccessText": "La tua richiesta di iscrizione è stata ricevuta.",
+    "newsletterSuccessHint": "Se ricevi un’email di conferma, segui il link al suo interno per completare l’iscrizione.",
+    "newsletterHome": "Torna alla pagina iniziale ↗",
+    "newsletterError": "L’iscrizione non è stata confermata. Controlla il tuo indirizzo email e riprova.",
+    "newsletterUncertain": "Non è stato possibile verificare la risposta. La richiesta potrebbe essere già arrivata. Controlla la posta prima di riprovare.",
+    "newsletterFallback": "Apri il modulo direttamente su Brevo ↗",
     "newsletterSubscribe": "Iscriviti alla newsletter",
-    "newsletterSubmitNote": "La conferma o la risposta di Brevo si apre in una nuova scheda. Puoi annullare l’iscrizione in qualsiasi momento.",
     "galleryAlt1": "Visita al museo davanti a un dipinto con bambini e adulti",
     "galleryAlt2": "Silvia Amadori illustra sculture antiche a un gruppo",
     "galleryAlt3": "Silvia Amadori accompagna un gruppo in una pinacoteca",
@@ -1648,8 +1778,16 @@ var I18N = {
     "languageSwitcherLabel": "Seleziona la lingua"
   },
   "en": {
+    "newsletterSubmitNote": "Subscribe here, without leaving the website. You can unsubscribe at any time.",
+    "newsletterSending": "Sending …",
+    "newsletterSuccessTitle": "Thank you!",
+    "newsletterSuccessText": "Your newsletter sign-up has been received.",
+    "newsletterSuccessHint": "If a confirmation email arrives, please follow its link to complete your subscription.",
+    "newsletterHome": "Back to the homepage ↗",
+    "newsletterError": "Your sign-up was not confirmed. Please check your email address and try again.",
+    "newsletterUncertain": "We could not verify the response. Your sign-up may already have been received. Please check your inbox before trying again.",
+    "newsletterFallback": "Open the form directly on Brevo ↗",
     "newsletterSubscribe": "Subscribe to the newsletter",
-    "newsletterSubmitNote": "Brevo’s confirmation or response opens in a new tab. You can unsubscribe at any time.",
     "galleryAlt1": "Museum tour in front of a painting with children and adults",
     "galleryAlt2": "Silvia Amadori discusses ancient sculptures with a group",
     "galleryAlt3": "Silvia Amadori guides a group through a painting gallery",
@@ -1836,7 +1974,7 @@ function applyLang(lang){
   document.querySelectorAll("[data-i18n-aria]").forEach(function(el){el.setAttribute("aria-label",t[el.getAttribute("data-i18n-aria")]);});
   document.querySelectorAll("[data-i18n-placeholder]").forEach(function(el){el.placeholder=t[el.getAttribute("data-i18n-placeholder")];});
   document.querySelectorAll("[data-i18n-alt]").forEach(function(el){el.alt=t[el.dataset.i18nAlt];});
-  syncTourPicker();
+  updateBookingLanguage(lang);
   document.getElementById("newsTitle").innerHTML=t.nH+"<em>"+t.nHem+"</em>"+t.nHrest;
   document.getElementById("newsEmail").placeholder=t.emailPh;
   document.getElementById("newsletterLocale").value=lang;
@@ -2097,6 +2235,34 @@ window.addEventListener("hashchange",function(){if(lb.classList.contains("open")
   window.addEventListener("hashchange",function(){requestAnimationFrame(measure);});
   if(typeof ResizeObserver!=="undefined")new ResizeObserver(measure).observe(strip);
   measure();requestAnimationFrame(animate);
+})();
+</script>
+
+<script>
+(function(){
+  var form=document.getElementById("news"),button=document.getElementById("newsletterSubmit"),result=document.getElementById("newsletterResult"),feedback=document.getElementById("newsletterFeedback"),fallback=document.getElementById("newsletterFallback");
+  var pending=false,statusKey="";
+  function words(){return I18N[document.documentElement.lang]||I18N.de;}
+  function render(){
+    button.disabled=pending;button.textContent=words()[pending?"newsletterSending":"newsletterSubscribe"];
+    form.setAttribute("aria-busy",pending?"true":"false");
+    if(statusKey){feedback.textContent=words()[statusKey];feedback.hidden=false;}else{feedback.textContent="";feedback.hidden=true;}
+  }
+  form.addEventListener("submit",async function(event){
+    event.preventDefault();if(pending)return;
+    pending=true;statusKey="newsletterSending";fallback.hidden=true;render();
+    var controller=new AbortController(),timeout=setTimeout(function(){controller.abort();},20000);
+    try{
+      var response=await fetch(form.action,{method:"POST",body:new FormData(form),mode:"cors",credentials:"omit",referrerPolicy:"strict-origin-when-cross-origin",headers:{Accept:"application/json"},signal:controller.signal});
+      var payload=await response.json();
+      if(response.ok&&payload&&payload.success===true){
+        statusKey="";form.hidden=true;result.hidden=false;result.focus();
+      }else if(payload&&payload.success===false){statusKey="newsletterError";}
+      else{statusKey="newsletterUncertain";fallback.hidden=false;}
+    }catch(error){statusKey="newsletterUncertain";fallback.hidden=false;}
+    finally{clearTimeout(timeout);pending=false;render();}
+  });
+  document.querySelectorAll(".langsw button").forEach(function(toggle){toggle.addEventListener("click",render);});
 })();
 </script>
 </body>
