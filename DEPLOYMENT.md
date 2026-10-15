@@ -20,3 +20,7 @@ The enquiry forms currently use email links. Direct form delivery and automatic 
 ## Review before publication
 
 The business postal address is still missing from the Impressum; do not describe the legal pages as complete. Photographer, museum and portrait permissions remain pending and must be confirmed before treating the supplied photos as cleared. Cloudflare is currently DNS-only, not an HTTP proxy; update privacy disclosures before changing that. Add https://silviaamadori.com/#impressum to Instagram after the address is completed. Projekte stays hidden pending finished content. Recheck the Neue Pinakothek reopening status before future content updates or confirming tours.
+
+## Brevo newsletter
+
+Newsletter subscription now uses the supplied Brevo iframe on sibforms.com, loaded only when the Newsletter route opens. The form contains its own heading and description; its content/language is managed in Brevo (currently English). The local portable HTML also requires internet for this external form. Confirm double opt-in, consent records, unsubscribe behavior, data-processing terms, tracking settings and confirmation emails in the Brevo account; embedding alone does not verify them. No live subscription was submitted during testing. Tour requests still prepare an email draft and are independent of Brevo.

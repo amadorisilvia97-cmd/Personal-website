@@ -720,6 +720,15 @@ body[data-current="start"] .hero{flex-direction:column;gap:2rem;padding-bottom:2
   #siteHeader #mainNav{grid-column:1 / -1;grid-row:2}
   #siteHeader .langsw{grid-column:2}
 }
+
+/* Brevo controls the embedded form; preserve its readable light appearance. */
+.news-brevo{background:var(--cream);color:#3a2e26;padding-block:2rem}
+.brevo-embed{width:100%;max-width:540px;margin-inline:auto;color-scheme:light}
+.brevo-embed iframe{display:block;width:100%;max-width:100%;height:520px;margin-inline:auto;border:0;background:var(--cream);color-scheme:light}
+.brevo-embed .note{color:#6b5c4f;font-size:.8125rem;line-height:1.6;margin:.75rem 1rem}
+.brevo-embed a{color:var(--burgundy);text-underline-offset:3px}
+.brevo-embed a:focus-visible{outline:2px solid var(--burgundy);outline-offset:3px}
+@media(max-width:600px){.brevo-embed iframe{height:580px}.news-brevo{padding-block:1rem}}
 </style>
 </head>
 <body>
@@ -927,15 +936,17 @@ body[data-current="start"] .hero{flex-direction:column;gap:2rem;padding-bottom:2
       <h3>Domain und DNS</h3>
       <p>Für die DNS-Verwaltung der Domain wird Cloudflare genutzt. Die DNS-Einträge sind im Modus „DNS only“ konfiguriert. Cloudflare stellt damit die Namensauflösung bereit; die HTTP-/HTTPS-Aufrufe dieser Website werden nicht über einen Cloudflare-Proxy geleitet. Informationen zur Datenverarbeitung im Zusammenhang mit Cloudflare-Diensten finden Sie in der <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer">Datenschutzerklärung von Cloudflare</a>.</p>
       <h3>3. Cookies, Schriftarten und Bilder</h3>
-      <p>Der Website-Code setzt keine Cookies ein und speichert keine Angaben in Local Storage oder Session Storage. Es werden keine Analyse-, Werbe- oder Trackingdienste eingebunden. Die Schriftarten und Bilder werden von derselben Domain wie die Website geladen; beim Laden werden dafür keine Verbindungen zu Google Fonts oder externen Bildanbietern aufgebaut.</p>
+      <p>Der eigene Website-Code setzt keine Cookies ein und speichert keine Angaben in Local Storage oder Session Storage. Außer dem in Abschnitt 5 beschriebenen Newsletter-Formular werden keine Analyse-, Werbe- oder Trackingdienste eingebunden. Für das externe Brevo-Formular gelten zusätzlich die Angaben in Abschnitt 5. Die Schriftarten und Bilder werden von derselben Domain wie die Website geladen; beim Laden werden dafür keine Verbindungen zu Google Fonts oder externen Bildanbietern aufgebaut.</p>
       <h3>4. Anfragen per E-Mail</h3>
       <p>Das Anfrageformular öffnet Ihr eigenes E-Mail-Programm mit einem vorbereiteten Nachrichtentext. Es sendet selbst keine Nachricht und übermittelt Ihre Eingaben nicht an einen Formularserver. Erst wenn Sie die E-Mail versenden, erhalte ich die von Ihnen angegebenen Daten, beispielsweise Name, E-Mail-Adresse, Gruppenart, Personenzahl, Sprache und Nachricht.</p>
       <p>Diese Angaben verwende ich zur Bearbeitung Ihrer Anfrage und gegebenenfalls zur Vorbereitung oder Durchführung einer Führung. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO bei vertragsbezogenen Anfragen, ansonsten Art. 6 Abs. 1 lit. f DSGVO aufgrund meines berechtigten Interesses an der Beantwortung Ihrer Nachricht. Die Angaben sind freiwillig; ohne eine Kontaktmöglichkeit kann ich Ihre Anfrage nicht beantworten.</p>
       <p>Das Empfängerpostfach wird bei Gmail betrieben. Google und Ihr eigener E-Mail-Anbieter können die Nachricht und Verbindungsdaten verarbeiten. Dabei können Daten auch außerhalb der EU verarbeitet werden. Informationen zur Verarbeitung und zu internationalen Übermittlungen durch Google finden Sie in der <a href="https://policies.google.com/privacy?hl=de" target="_blank" rel="noopener noreferrer">Datenschutzerklärung von Google</a>.</p>
       <p>Anfragen werden gelöscht, sobald sie nicht mehr für die Bearbeitung benötigt werden. Soweit gesetzliche Aufbewahrungspflichten bestehen oder Daten zur Geltendmachung, Ausübung oder Verteidigung von Rechtsansprüchen erforderlich sind, werden sie für die entsprechende Dauer aufbewahrt.</p>
-      <h3>5. Newsletter-Anfragen</h3>
-      <p>Auch die Newsletter-Anmeldung öffnet lediglich Ihr E-Mail-Programm. Eine automatische Aufnahme in eine Verteilerliste findet durch das Formular nicht statt. Mit dem Versand Ihrer Anmeldung bitten Sie darum, Informationen zu Führungen und Neuigkeiten zu erhalten. Ihre E-Mail-Adresse wird für diesen Zweck auf Grundlage Ihrer Einwilligung gemäß Art. 6 Abs. 1 lit. a DSGVO verarbeitet.</p>
-      <p>Sie können Ihre Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen, etwa durch eine E-Mail an <a class="email-contact" href="#kontakt-email">silvia.artstories<span aria-hidden="true">&#64;</span><span class="sr-only">@</span>gmail.com</a>. Die Rechtmäßigkeit der bisherigen Verarbeitung bleibt unberührt. Die Adresse wird für den Newsletter bis zum Widerruf verwendet und danach aus dem Verteiler entfernt. Für die E-Mail-Kommunikation gelten die Angaben zu Gmail im vorstehenden Abschnitt.</p>
+      <h3>5. Newsletter mit Brevo</h3>
+      <p>Für die Anmeldung und den Versand des Newsletters nutze ich Brevo. Das eingebettete Anmeldeformular wird erst geladen, wenn Sie die Newsletter-Seite öffnen. Dabei wird eine Verbindung zu sibforms.com hergestellt; Brevo erhält technische Verbindungsdaten wie Ihre IP-Adresse und Browserinformationen. Welche technischen Speichermechanismen der Anbieter verwendet, richtet sich nach dessen Dienst und Einstellungen.</p>
+      <p>Wenn Sie den Newsletter abonnieren, werden Ihre im Formular angegebenen Daten, insbesondere Ihre E-Mail-Adresse, an Brevo übermittelt und zur Verwaltung der Anmeldung sowie zum Versand von Informationen über Museumsführungen und Neuigkeiten verarbeitet. Rechtsgrundlage für den Newsletter-Versand ist Ihre Einwilligung gemäß Art. 6 Abs. 1 lit. a DSGVO. Das Formular versendet keine Anmeldung über Ihr eigenes E-Mail-Programm.</p>
+      <p>Sie können Ihre Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen, insbesondere über den Abmeldelink in jeder Newsletter-E-Mail oder per E-Mail an <a class="email-contact" href="#kontakt-email">silvia.artstories<span aria-hidden="true">&#64;</span><span class="sr-only">@</span>gmail.com</a>. Die Rechtmäßigkeit der bisherigen Verarbeitung bleibt unberührt. Nach der Abmeldung werden Ihre Daten nicht mehr für den Newsletter-Versand verwendet. Soweit Nachweise über die Einwilligung oder die Abmeldung zur Erfüllung rechtlicher Pflichten oder zur Verteidigung von Rechtsansprüchen erforderlich sind, können diese zweckgebunden weiter aufbewahrt werden.</p>
+      <p>Weitere Informationen zu Brevo, seinen Unterauftragnehmern, Speicherdauern und internationalen Datenübermittlungen finden Sie in der <a href="https://www.brevo.com/legal/privacypolicy/" target="_blank" rel="noopener noreferrer">Datenschutzerklärung von Brevo</a>.</p>
       <h3>6. LinkedIn, Instagram und andere externe Links</h3>
       <p>Die Social-Media-Symbole sind einfache Links; es werden keine Social-Media-Plugins oder eingebetteten Feeds geladen. Erst wenn Sie einen Link öffnen, besuchen Sie die externe Website. Dort gelten die Datenschutzbestimmungen des jeweiligen Anbieters; dieser kann insbesondere Ihre IP-Adresse erhalten. Die Social-Media-Links verwenden keinen Referrer, sodass die aufgerufene Seite nicht über diesen Header übermittelt wird.</p>
       <h3>7. Ihre Rechte</h3>
@@ -948,16 +959,13 @@ body[data-current="start"] .hero{flex-direction:column;gap:2rem;padding-bottom:2
     </div>
   </section>
 
-  <section id="newsletter" class="news" data-page="newsletter">
-    <p class="eyebrow" data-i18n="nEy">Newsletter</p>
-    <h2 id="newsTitle">In <em>Kontakt</em> bleiben</h2>
-    <p class="sub" style="margin:0 auto" data-i18n="nSub">Geschichten aus den Museen, neue Perspektiven und Ideen für Ihre nächste private Führung. Wenige E-Mails, mit Sorgfalt geschrieben.</p>
-    <form id="news">
-      <input type="email" name="email" id="newsEmail" required placeholder="Ihre E-Mail-Adresse" aria-label="E-Mail" data-i18n-aria="emailLabel" autocomplete="email">
-      <button class="btn" type="submit" id="newsBtn">Anmeldung per E-Mail vorbereiten</button>
-      <p class="note" id="newsNote">Ihr E-Mail-Programm öffnet sich; bitte senden Sie die Anmeldung dort ab. Sie können sich jederzeit wieder abmelden.</p>
-        <p class="note form-privacy"><span data-i18n="privacyForm">Informationen zur Verarbeitung Ihrer Angaben:</span> <a href="#datenschutz" data-i18n="privacyLink">Datenschutzerklärung</a></p>
-    </form>
+  <section id="newsletter" class="news news-brevo" data-page="newsletter" aria-label="Newsletter">
+    <div class="brevo-embed">
+      <iframe id="brevoNewsletter" title="Newsletter-Anmeldung — Brevo" width="540" height="520" data-src="https://1979ac13.sibforms.com/v2/serve/MUIFAOh9GwNlPi3Ug3WPN3wpVP0Flk87URZF_rCUpjwALq0KiP6VBv6zgufI4KpOk0HcoD6aqyLBhMY45DvSw5Cn_ilVxA25Aayp_wVbaQ2eyEMYErNRE8d7IPmTu85COXhRxU9TgQ6vs_E0IcbY0Gdulp3b96a_gP09lQ2YaqDyOu5iNP7vd5pjOlXVPh3rXXmebPHiMGWW0Lc9hg==" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" scrolling="auto" allowfullscreen></iframe>
+      <p class="note brevo-note" data-i18n="brevoNote">Die Anmeldung erfolgt direkt über Brevo. Sie können sich jederzeit über den Link in jeder Newsletter-E-Mail abmelden.</p>
+      <p class="note form-privacy"><span data-i18n="privacyForm">Informationen zur Verarbeitung Ihrer Angaben:</span> <a href="#datenschutz" data-i18n="privacyLink">Datenschutzerklärung</a></p>
+      <p class="note"><a href="https://1979ac13.sibforms.com/v2/serve/MUIFAOh9GwNlPi3Ug3WPN3wpVP0Flk87URZF_rCUpjwALq0KiP6VBv6zgufI4KpOk0HcoD6aqyLBhMY45DvSw5Cn_ilVxA25Aayp_wVbaQ2eyEMYErNRE8d7IPmTu85COXhRxU9TgQ6vs_E0IcbY0Gdulp3b96a_gP09lQ2YaqDyOu5iNP7vd5pjOlXVPh3rXXmebPHiMGWW0Lc9hg==" target="_blank" rel="noopener noreferrer" data-i18n="brevoOpen">Formular in einem neuen Tab öffnen ↗</a></p>
+    </div>
   </section>
 
   <section id="ueber-mich" class="about" data-page="ueber-mich">
@@ -1286,11 +1294,6 @@ document.getElementById("anfrage").addEventListener("submit", function(e){
     "Führung: " + e.target.elements.tour.selectedOptions[0].textContent + "\nWunschtermin: " + (f.get("date") || "Noch offen") + "\nName: " + f.get("name") + "\nE-Mail: " + f.get("email") + "\nArt der Gruppe: " + e.target.elements.typ.selectedOptions[0].textContent +
     "\nPersonen: " + (f.get("personen") || "-") + "\nSprache: " + e.target.elements.sprache.selectedOptions[0].textContent + "\n\n" + (f.get("msg") || ""));
 });
-document.getElementById("news").addEventListener("submit", function(e){
-  e.preventDefault();
-  var em = new FormData(e.target).get("email");
-  go("Newsletter-Anmeldung", "Ich möchte den Newsletter mit dieser Adresse abonnieren: " + em);
-});
 
 // --- Sprachumschalter ---
 // Museum descriptions are maintained consistently as museum1Description–museum7Description in DE/EN/IT.
@@ -1298,6 +1301,9 @@ document.getElementById("news").addEventListener("submit", function(e){
 // 5 Staatliche Antikensammlungen; 6 Sammlung Schack; 7 Museum für Abgüsse Klassischer Bildwerke München.
 var I18N = {
   "de": {
+    "brevoTitle": "Newsletter-Anmeldung — Brevo",
+    "brevoNote": "Die Anmeldung erfolgt direkt über Brevo. Sie können sich jederzeit über den Link in jeder Newsletter-E-Mail abmelden.",
+    "brevoOpen": "Formular in einem neuen Tab öffnen ↗",
     "galleryAlt1": "Museumsführung vor einem Gemälde mit Kindern und Erwachsenen",
     "galleryAlt2": "Silvia Amadori erläutert antike Skulpturen vor einer Gruppe",
     "galleryAlt3": "Silvia Amadori führt eine Gruppe durch eine Gemäldegalerie",
@@ -1406,8 +1412,6 @@ var I18N = {
     "aBody": "<p>Ich habe Kunstgeschichte und Klassische Archäologie in Heidelberg, Lyon und München studiert und arbeite als Kunstvermittlerin in verschiedenen Museen Münchens. Derzeit promoviere ich an der Ludwig-Maximilians-Universität München im Fach Kunstgeschichte zur Rezeption der Antike im 18. Jahrhundert. Auf Deutsch, Englisch und Italienisch begleite ich Sie durch Museen und Ausstellungen – mit wissenschaftlicher Genauigkeit, Neugier und einem besonderen Blick für Details.</p>",
     "subBtn": "E-Mail vorbereiten",
     "subNote": "Es öffnet sich Ihr E-Mail-Programm. Ihre Anfrage wird erst versendet, wenn Sie dort auf „Senden“ klicken.",
-    "newsBtn": "Anmeldung per E-Mail vorbereiten",
-    "newsNote": "Ihr E-Mail-Programm öffnet sich; bitte senden Sie die Anmeldung dort ab. Sie können sich jederzeit wieder abmelden.",
     "emailPh": "Ihre E-Mail-Adresse",
     "addr": "",
     "portraitPh": "Foto folgt",
@@ -1468,6 +1472,9 @@ var I18N = {
     "languageSwitcherLabel": "Sprache auswählen"
   },
   "it": {
+    "brevoTitle": "Iscrizione alla newsletter — Brevo",
+    "brevoNote": "L’iscrizione avviene direttamente tramite Brevo. Puoi annullarla in qualsiasi momento tramite il link presente in ogni newsletter.",
+    "brevoOpen": "Apri il modulo in una nuova scheda ↗",
     "galleryAlt1": "Visita al museo davanti a un dipinto con bambini e adulti",
     "galleryAlt2": "Silvia Amadori illustra sculture antiche a un gruppo",
     "galleryAlt3": "Silvia Amadori accompagna un gruppo in una pinacoteca",
@@ -1576,8 +1583,6 @@ var I18N = {
     "aBody": "<p>Ho studiato Storia dell'Arte e Archeologia Classica a Heidelberg, Lione e Monaco di Baviera, e lavoro come Kunstvermittlerin in diversi musei di Monaco. Attualmente sto conseguendo il dottorato in Storia dell'Arte presso la Ludwig-Maximilians-Universität di Monaco, con una ricerca sulla ricezione dell'antichità nel XVIII secolo. In tedesco, inglese e italiano vi accompagno attraverso musei e mostre — con rigore scientifico, curiosità e un occhio particolare per i dettagli.</p>",
     "subBtn": "Prepara email",
     "subNote": "Si apre il tuo programma di posta. La richiesta viene inviata solo quando premi «Invia» nel programma.",
-    "newsBtn": "Prepara l’iscrizione via email",
-    "newsNote": "Si apre il tuo programma di posta: invia l’iscrizione da lì. Puoi annullarla in qualsiasi momento.",
     "emailPh": "La tua email",
     "addr": "",
     "portraitPh": "Foto in arrivo",
@@ -1638,6 +1643,9 @@ var I18N = {
     "languageSwitcherLabel": "Seleziona la lingua"
   },
   "en": {
+    "brevoTitle": "Newsletter subscription — Brevo",
+    "brevoNote": "Subscribe directly through Brevo. You can unsubscribe at any time using the link in each newsletter email.",
+    "brevoOpen": "Open the form in a new tab ↗",
     "galleryAlt1": "Museum tour in front of a painting with children and adults",
     "galleryAlt2": "Silvia Amadori discusses ancient sculptures with a group",
     "galleryAlt3": "Silvia Amadori guides a group through a painting gallery",
@@ -1746,8 +1754,6 @@ var I18N = {
     "aBody": "<p>I studied Art History and Classical Archaeology in Heidelberg, Lyon and Munich, and work as a museum guide (Kunstvermittlerin) in several museums across Munich. I am currently pursuing a doctorate in Art History at Ludwig-Maximilians-Universität München, researching the reception of antiquity in the 18th century. In German, English and Italian, I guide you through museums and exhibitions — with scholarly precision, curiosity and a keen eye for detail.</p>",
     "subBtn": "Prepare email",
     "subNote": "Your email app opens. Your enquiry is sent only when you press “Send” in that app.",
-    "newsBtn": "Prepare subscription by email",
-    "newsNote": "Your email app opens; please send your subscription from there. You can unsubscribe at any time.",
     "emailPh": "Your email address",
     "addr": "",
     "portraitPh": "Photo coming soon",
@@ -1820,17 +1826,14 @@ function applyLang(lang){
   });
   document.getElementById("heroTitle").innerHTML = t.heroH + "<em>" + t.heroHem + "</em>" + t.heroHrest;
   document.getElementById("heroSub").textContent = t.heroSub;
-  document.getElementById("newsTitle").innerHTML = t.nH + "<em>" + t.nHem + "</em>" + t.nHrest;
   document.getElementById("aboutBody").innerHTML = t.aBody;
   document.getElementById("subBtn").textContent = t.subBtn;
   document.getElementById("subNote").textContent = t.subNote;
-  document.getElementById("newsBtn").textContent = t.newsBtn;
-  document.getElementById("newsNote").textContent = t.newsNote;
-  document.getElementById("newsEmail").placeholder = t.emailPh;
   document.querySelectorAll("[data-i18n-aria]").forEach(function(el){el.setAttribute("aria-label",t[el.getAttribute("data-i18n-aria")]);});
   document.querySelectorAll("[data-i18n-placeholder]").forEach(function(el){el.placeholder=t[el.getAttribute("data-i18n-placeholder")];});
   document.querySelectorAll("[data-i18n-alt]").forEach(function(el){el.alt=t[el.dataset.i18nAlt];});
   syncTourPicker();
+  document.getElementById("brevoNewsletter").title=t.brevoTitle;
   document.documentElement.lang = lang;
   document.querySelectorAll(".langsw button").forEach(function(b){b.classList.toggle("on", b.dataset.lang===lang);b.setAttribute("aria-pressed",b.dataset.lang===lang?"true":"false")});
 }
@@ -1880,6 +1883,10 @@ function route(){
   var p=PAGE_OF[h]||"start";
   if(h==="anfrage")selectTourFromHash(rawHash);
   document.body.setAttribute("data-current",p);
+  if(p==="newsletter"){
+    var newsletterFrame=document.getElementById("brevoNewsletter");
+    if(!newsletterFrame.hasAttribute("src"))newsletterFrame.src=newsletterFrame.dataset.src;
+  }
   document.querySelectorAll("[data-page]").forEach(function(el){
     var pg=el.getAttribute("data-page");
     el.hidden=!(pg===p||(pg==="booking"&&(p==="start"||p==="anfrage"))||(pg==="sub"&&p!=="start"));
