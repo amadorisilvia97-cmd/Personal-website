@@ -1,0 +1,222 @@
+{
+  "reviewed": "2026-10-15",
+  "note": "Extracted from the pre-existing local HTML. Extraction does not establish copyright, portrait consent, or museum permissions. User-supplied gallery/portrait/Neue Pinakothek photos remain pending rights verification. CC attribution for museum and tour images is in the Impressum and assets/image-sources.json.",
+  "assets": [
+    {
+      "path": "assets/icons/c0e69747c0374c82.png",
+      "originalSHA256": "c0e69747c0374c82fcee41a6d1f8cab61258286865e1748a041731fafe57bf78",
+      "mime": "image/png",
+      "bytes": 1795
+    },
+    {
+      "path": "assets/icons/5ca821374fc43013.png",
+      "originalSHA256": "5ca821374fc43013b3c914d9f849f3e89a9b1fe67159e26c676586e0d265756d",
+      "mime": "image/png",
+      "bytes": 9255
+    },
+    {
+      "path": "assets/fonts/0b9a8a33cfaa624d.ttf",
+      "originalSHA256": "0b9a8a33cfaa624d30f70f9b6686da769b319b8c37a55af16e29fef690108bbf",
+      "mime": "font/ttf",
+      "bytes": 293036
+    },
+    {
+      "path": "assets/fonts/6d37a86241a25d63.ttf",
+      "originalSHA256": "6d37a86241a25d63f8fe6018b4c083449886b7165c1acb15edd0f574f690ecf7",
+      "mime": "font/ttf",
+      "bytes": 290236
+    },
+    {
+      "path": "assets/fonts/1724047c8988ca51.ttf",
+      "originalSHA256": "1724047c8988ca5155bff667bc48fa52e97d57aabc6b42eebbf986f21a4be20b",
+      "mime": "font/ttf",
+      "bytes": 290496
+    },
+    {
+      "path": "assets/fonts/f6fe95f2bd642e9c.ttf",
+      "originalSHA256": "f6fe95f2bd642e9cbab84430f157d3dcd14173f027b0859cca911c852993dce8",
+      "mime": "font/ttf",
+      "bytes": 58904
+    },
+    {
+      "path": "assets/fonts/c3143e923ed1ca7b.ttf",
+      "originalSHA256": "c3143e923ed1ca7bdf27f96c351fbafaebcbd3cf3f4c2d30d03e6c7f98e73d7a",
+      "mime": "font/ttf",
+      "bytes": 58796
+    },
+    {
+      "path": "assets/fonts/d6ff7726ec21576c.ttf",
+      "originalSHA256": "d6ff7726ec21576cf2fdac55080b2d43832780fa981f03f0b66d2723a7c1ea09",
+      "mime": "font/ttf",
+      "bytes": 58936
+    },
+    {
+      "path": "assets/fonts/6021680663c58b34.ttf",
+      "originalSHA256": "6021680663c58b344d8404c289c755aadc662a02189ffe4f5ca79378f9e97840",
+      "mime": "font/ttf",
+      "bytes": 110816
+    },
+    {
+      "path": "assets/fonts/b60ffb0ee2b4e09d.ttf",
+      "originalSHA256": "b60ffb0ee2b4e09d71d67ff3ea16d6a23cf2e0cf637c5f4e36fff2e3b1465252",
+      "mime": "font/ttf",
+      "bytes": 123608
+    },
+    {
+      "path": "assets/fonts/8ab6a1db2d7caeb4.ttf",
+      "originalSHA256": "8ab6a1db2d7caeb46c742371da500d0f3de1dc6ec6bea2aef0106f678d7a1f8d",
+      "mime": "font/ttf",
+      "bytes": 123672
+    },
+    {
+      "path": "assets/images/9f93f693c6f4f9bb.webp",
+      "originalSHA256": "9f93f693c6f4f9bbd1783082980b1aa9e89275360e68d38346c7931cab73cff1",
+      "mime": "image/webp",
+      "bytes": 59882
+    },
+    {
+      "path": "assets/images/fd8f5fece856eeb9.webp",
+      "originalSHA256": "fd8f5fece856eeb9064abc09b6bb8a00335eb551222fcfe3957079516b8ffc17",
+      "mime": "image/webp",
+      "bytes": 12548
+    },
+    {
+      "path": "assets/images/7b890b77e2419445.webp",
+      "originalSHA256": "7b890b77e2419445364d560eac4466f6078fd3ce93e7634a1fda955c2e1a26d1",
+      "mime": "image/webp",
+      "bytes": 8882
+    },
+    {
+      "path": "assets/images/8dd8b92eab17039c.webp",
+      "originalSHA256": "8dd8b92eab17039cd869d7856d48426ff104bcd215c5a2584a524322a95494fc",
+      "mime": "image/webp",
+      "bytes": 35318
+    },
+    {
+      "path": "assets/images/e31c76a3ae137125.webp",
+      "originalSHA256": "e31c76a3ae137125b7d08dfb84357f485bdf4daa3d6cbc7992d51b8462bbc185",
+      "mime": "image/webp",
+      "bytes": 39808
+    },
+    {
+      "path": "assets/images/b28442e795b0363b.webp",
+      "originalSHA256": "b28442e795b0363b5ac5fe006e433e9de484122deaf0aad6cec088e81793bbd2",
+      "mime": "image/webp",
+      "bytes": 27262
+    },
+    {
+      "path": "assets/images/0ce168376a9207b3.webp",
+      "originalSHA256": "0ce168376a9207b32141c4cfa05f2feb8136dd940660aa032e03892fbbb6a0a0",
+      "mime": "image/webp",
+      "bytes": 37608
+    },
+    {
+      "path": "assets/images/c8b2d202eb13eff2.webp",
+      "originalSHA256": "c8b2d202eb13eff229971234ec72e1c8eb676e1b93cd109a9349313394d8ae9d",
+      "mime": "image/webp",
+      "bytes": 30712
+    },
+    {
+      "path": "assets/images/aec8cb4287a06e9c.webp",
+      "originalSHA256": "aec8cb4287a06e9c18adf511fd087432045eb8eecdead9cb17878acf0fe4a2b1",
+      "mime": "image/webp",
+      "bytes": 45652
+    },
+    {
+      "path": "assets/images/2fe30be7c9b8d5e8.webp",
+      "originalSHA256": "2fe30be7c9b8d5e8e61dae4a537e4e305b441aab7c06e6084246b3d57ed69d67",
+      "mime": "image/webp",
+      "bytes": 48206
+    },
+    {
+      "path": "assets/images/8bc0a37701036680.webp",
+      "originalSHA256": "8bc0a37701036680947fa1272a464a7a7ca18410dec788d9c0fd7d7a5512a8d6",
+      "mime": "image/webp",
+      "bytes": 44130
+    },
+    {
+      "path": "assets/images/009343729cde86f7.webp",
+      "originalSHA256": "009343729cde86f7c7aabb1b8795b9b8276b4515bffcf567e660db0e4416e8f2",
+      "mime": "image/jpeg",
+      "bytes": 137650
+    },
+    {
+      "path": "assets/images/d93b2dc5cd4ff465.webp",
+      "originalSHA256": "d93b2dc5cd4ff465ba1e1a838876592adb1f3392100d42fb66d33d5c17e6a797",
+      "mime": "image/jpeg",
+      "bytes": 246152
+    },
+    {
+      "path": "assets/images/4d0c46d8bb56dbe1.webp",
+      "originalSHA256": "4d0c46d8bb56dbe1d33d38169a91cd06d418d9d53c0d19ff9b586f32ad4429e5",
+      "mime": "image/jpeg",
+      "bytes": 171352
+    },
+    {
+      "path": "assets/images/a6444ed90ee83b37.webp",
+      "originalSHA256": "a6444ed90ee83b37f52d7c2de48941ca3a601a8ef89c90551e5bcc7ac7bd7877",
+      "mime": "image/jpeg",
+      "bytes": 178832
+    },
+    {
+      "path": "assets/images/a8716d199e26331e.webp",
+      "originalSHA256": "a8716d199e26331e5c3e472b98550e832d7ff9045212e1d97798957f7c09573d",
+      "mime": "image/jpeg",
+      "bytes": 527236
+    },
+    {
+      "path": "assets/images/abae6b409ba65645.webp",
+      "originalSHA256": "abae6b409ba656454749cccdd2c668a2db77247e263b29ec6ffc9dd17cffb85e",
+      "mime": "image/png",
+      "bytes": 26010
+    },
+    {
+      "path": "assets/images/b5e212726b72f488.webp",
+      "originalSHA256": "b5e212726b72f488171eb0ee35880b42866ad64031858ee1dfd87c5f8d0801b6",
+      "mime": "image/webp",
+      "bytes": 61412
+    },
+    {
+      "path": "assets/images/3b7f49f5bef4c95c.webp",
+      "originalSHA256": "3b7f49f5bef4c95c99437ba086082e0703671c006097da1fec1817e300ca387d",
+      "mime": "image/webp",
+      "bytes": 92746
+    },
+    {
+      "path": "assets/images/691c33816ada0103.webp",
+      "originalSHA256": "691c33816ada01034749e5e00280e5d9543ad038477a575b1ed6e5e510a0685e",
+      "mime": "image/webp",
+      "bytes": 95042
+    },
+    {
+      "path": "assets/images/8fbc608cd8b53aeb.webp",
+      "originalSHA256": "8fbc608cd8b53aeb6fa2864854c8ad298cdcf5fa7ca5a584a22fc02b16b75ee1",
+      "mime": "image/webp",
+      "bytes": 92078
+    },
+    {
+      "path": "assets/images/5739fcaaf32c5401.webp",
+      "originalSHA256": "5739fcaaf32c5401f42b8882bdaea911ca0fa692661f05c5c8715a7e54e4837b",
+      "mime": "image/webp",
+      "bytes": 79006
+    },
+    {
+      "path": "assets/images/5eb215d3a8297954.webp",
+      "originalSHA256": "5eb215d3a8297954d8be2cd39169f71adc8254d79aac496904e6a09aa9d827d1",
+      "mime": "image/webp",
+      "bytes": 131900
+    },
+    {
+      "path": "assets/images/b7805a52477d55c2.webp",
+      "originalSHA256": "b7805a52477d55c27e091c560da54c662caf6cc61a4ce26b16d41c7b712f9c80",
+      "mime": "image/webp",
+      "bytes": 119936
+    },
+    {
+      "path": "assets/images/7d730610b066bcfc.webp",
+      "originalSHA256": "7d730610b066bcfc145e7ff551c24b3ecb394e8f5d6b3205b7d83c73730cd8ca",
+      "mime": "image/webp",
+      "bytes": 140942
+    }
+  ]
+}
