@@ -89,8 +89,6 @@
 .museum-status{display:block;margin-top:.875rem;color:var(--muted);font-family:var(--sans);font-size:.75rem;line-height:1.5}
 .publication-citation{min-width:0;overflow-wrap:break-word;line-height:1.65}
 .publication-citation em{font-style:italic}
-.project-entry{max-width:48rem;margin-top:2rem}
-.project-entry h3{font-size:clamp(1.75rem,4vw,2.25rem);margin-bottom:1.25rem}
 .project-image{display:block;width:100%;height:auto}
 /* Legal pages use the existing cream, burgundy and serif typography. */
 .legal-page{border-top:0}
@@ -1319,7 +1317,6 @@ var I18N = {
     "galleryAlt9": "Silvia Amadori erklärt ein Gemälde im Museum",
     "pageTitle": "Silvia Amadori · Kunstführungen in München",
     "metaDescription": "Private Kunstführungen in München mit Silvia Amadori: Museen gemeinsam entdecken, auf Deutsch, Englisch oder Italienisch. Individuelle Rundgänge und Gutscheine.",
-    "navProjects": "Projekte",
     "neueStatus": "Wegen Sanierung geschlossen · Wiedereröffnung voraussichtlich 2030.",
     "nav1": "Museen",
     "navTours": "Themen",
@@ -1490,7 +1487,6 @@ var I18N = {
     "galleryAlt9": "Silvia Amadori illustra un dipinto al museo",
     "pageTitle": "Silvia Amadori · Visite guidate ai musei di Monaco",
     "metaDescription": "Scoprite i musei di Monaco con la storica dell’arte Silvia Amadori. Visite private in tedesco, inglese e italiano e buoni regalo.",
-    "navProjects": "Progetti",
     "neueStatus": "Chiusa per ristrutturazione · Riapertura prevista nel 2030.",
     "nav1": "Musei",
     "navTours": "Temi",
@@ -1661,7 +1657,6 @@ var I18N = {
     "galleryAlt9": "Silvia Amadori explains a painting in the museum",
     "pageTitle": "Silvia Amadori · Private museum tours in Munich",
     "metaDescription": "Explore Munich’s museums with art historian Silvia Amadori. Private tours in German, English and Italian, tailored visits and gift vouchers.",
-    "navProjects": "Projects",
     "neueStatus": "Closed for renovation · Expected to reopen in 2030.",
     "nav1": "Museums",
     "navTours": "Themes",
@@ -1854,7 +1849,7 @@ document.querySelectorAll(".langsw button").forEach(function(b){
 applyLang("de");
 
 /* Seitennavigation */
-var PAGE_OF={impressum:"impressum",datenschutz:"datenschutz",projekte:"start",touren:"touren",privat:"privat",oeffentlich:"privat",fuehrungen:"privat",bilder:"start",gruppen:"start",anfrage:"anfrage",gutschein:"gutschein",termine:"privat",publikationen:"ueber-mich",newsletter:"newsletter","ueber-mich":"ueber-mich"};
+var PAGE_OF={impressum:"impressum",datenschutz:"datenschutz",touren:"touren",privat:"privat",oeffentlich:"privat",fuehrungen:"privat",bilder:"start",gruppen:"start",anfrage:"anfrage",gutschein:"gutschein",termine:"privat",publikationen:"ueber-mich",newsletter:"newsletter","ueber-mich":"ueber-mich"};
 function setHdr(){
   var h=document.querySelector("header");if(!h)return;
   var height=h.parentNode.offsetHeight||80,nav=document.getElementById("mainNav");
